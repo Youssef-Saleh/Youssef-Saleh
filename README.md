@@ -1,6 +1,6 @@
 <div align="center">
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" font-family="'Cascadia Mono','Consolas','Courier New',monospace">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="'Cascadia Mono','Consolas','Courier New',monospace">
   <!-- =========================================================
        C2 — A SOC analyst's terminal. Hand-drawn for Youssef Saleh.
        Designed for GitHub profile README — renders inline.
@@ -20,13 +20,13 @@
   </defs>
 
   <!-- ========== OUTER MONITOR FRAME ========== -->
-  <rect x="0" y="0" width="1200" height="720" fill="url(#bezel)"/>
-  <rect x="14" y="14" width="1172" height="692" fill="#050810"/>
-  <rect x="18" y="18" width="1164" height="684" fill="url(#screenGlow)"/>
+  <rect x="0" y="0" width="1200" height="900" fill="url(#bezel)"/>
+  <rect x="14" y="14" width="1172" height="872" fill="#050810"/>
+  <rect x="18" y="18" width="1164" height="864" fill="url(#screenGlow)"/>
   <!-- corner screws -->
   <g fill="#2a3a5a">
     <circle cx="30" cy="30" r="3"/><circle cx="1170" cy="30" r="3"/>
-    <circle cx="30" cy="690" r="3"/><circle cx="1170" cy="690" r="3"/>
+    <circle cx="30" cy="870" r="3"/><circle cx="1170" cy="870" r="3"/>
   </g>
 
   <!-- ========== HEADER STRIP ========== -->
@@ -106,12 +106,16 @@
 
   <!-- 6-axis radar chart -->
   <g transform="translate(446,338)">
-    <g fill="none" stroke="#1f2a44" stroke-width="0.5">
-      <polygon points="0,-130 113,-65 113,65 0,130 -113,65 -113,-65"/>
-      <polygon points="0,-100 87,-50 87,50 0,100 -87,50 -87,-50" stroke-dasharray="2,3"/>
-      <polygon points="0,-70  61,-35 61,35 0,70  -61,35 -61,-35" stroke-dasharray="2,3"/>
-      <polygon points="0,-40  35,-20 35,20 0,40  -35,20 -35,-20" stroke-dasharray="2,3"/>
+    <!-- outer hexagonal frame -->
+    <polygon points="0,-130 113,-65 113,65 0,130 -113,65 -113,-65"
+             fill="none" stroke="#1f2a44" stroke-width="1"/>
+    <!-- inner reference rings (dotted) -->
+    <g fill="none" stroke="#1f2a44" stroke-width="0.5" stroke-dasharray="2,3">
+      <polygon points="0,-100 87,-50 87,50 0,100 -87,50 -87,-50"/>
+      <polygon points="0,-70  61,-35 61,35 0,70  -61,35 -61,-35"/>
+      <polygon points="0,-40  35,-20 35,20 0,40  -35,20 -35,-20"/>
     </g>
+    <!-- axis spokes -->
     <g stroke="#1f2a44" stroke-width="0.5">
       <line x1="0" y1="0" x2="0" y2="-130"/>
       <line x1="0" y1="0" x2="113" y2="-65"/>
@@ -120,24 +124,39 @@
       <line x1="0" y1="0" x2="-113" y2="65"/>
       <line x1="0" y1="0" x2="-113" y2="-65"/>
     </g>
+    <!-- filled capability polygon (the centerpiece) -->
     <polygon points="0,-118 95,-55 88,52 0,108 -90,52 -100,-58"
              fill="#19c7d9" fill-opacity="0.35" stroke="#19c7d9" stroke-width="2"/>
-    <g font-size="11" fill="#c9d1d9" text-anchor="middle" font-weight="700">
-      <text x="0"   y="-140">AI/ML</text>
-      <text x="130" y="-72">SEC</text>
-      <text x="130" y="82">ENG</text>
-      <text x="0"   y="148">XAI</text>
-      <text x="-130" y="82">DATA</text>
-      <text x="-130" y="-72">SHIP</text>
+    <!-- inner highlight polygon for depth -->
+    <polygon points="0,-118 95,-55 88,52 0,108 -90,52 -100,-58"
+             fill="none" stroke="#f29e2e" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <!-- axis labels with values -->
+    <g font-size="10" fill="#c9d1d9" text-anchor="middle">
+      <text x="0"    y="-140" font-weight="700">AI/ML</text>
+      <text x="0"    y="-128" fill="#19c7d9">96</text>
+      <text x="130"  y="-72"  font-weight="700">SEC</text>
+      <text x="148"  y="-72"  fill="#19c7d9">82</text>
+      <text x="130"  y="82"   font-weight="700">ENG</text>
+      <text x="148"  y="82"   fill="#19c7d9">73</text>
+      <text x="0"    y="148"  font-weight="700">XAI</text>
+      <text x="0"    y="162"  fill="#19c7d9">88</text>
+      <text x="-130" y="82"   font-weight="700">DATA</text>
+      <text x="-148" y="82"   fill="#19c7d9">68</text>
+      <text x="-130" y="-72"  font-weight="700">SHIP</text>
+      <text x="-148" y="-72"  fill="#19c7d9">90</text>
     </g>
-    <g fill="#f29e2e">
-      <circle cx="0" cy="-118" r="3"/>
-      <circle cx="95" cy="-55" r="3"/>
-      <circle cx="88" cy="52" r="3"/>
-      <circle cx="0" cy="108" r="3"/>
-      <circle cx="-90" cy="52" r="3"/>
-      <circle cx="-100" cy="-58" r="3"/>
+    <!-- vertex markers -->
+    <g fill="#f29e2e" stroke="#0a0e1a" stroke-width="1.5">
+      <circle cx="0"    cy="-118" r="4"/>
+      <circle cx="95"   cy="-55"  r="4"/>
+      <circle cx="88"   cy="52"   r="4"/>
+      <circle cx="0"    cy="108"  r="4"/>
+      <circle cx="-90"  cy="52"   r="4"/>
+      <circle cx="-100" cy="-58"  r="4"/>
     </g>
+    <!-- center crosshair -->
+    <line x1="-6" y1="0" x2="6" y2="0" stroke="#19c7d9" stroke-width="0.5"/>
+    <line x1="0" y1="-6" x2="0" y2="6" stroke="#19c7d9" stroke-width="0.5"/>
   </g>
 
   <!-- "Now building" block -->
@@ -225,136 +244,166 @@
   <text x="912" y="114" font-size="11" fill="#8a96ac">// EVENT STREAM</text>
   <text x="1162" y="114" font-size="11" fill="#19c7d9" text-anchor="end">0x03</text>
 
-  <!-- 2x5 grid of mini icons -->
-  <g transform="translate(914,138)">
+  <!-- 4x3 grid of mini icons (50x50 each, 5px gap) -->
+  <g transform="translate(906,138)">
     <!-- icon 1: Python -->
     <g transform="translate(0,0)">
-      <rect x="0" y="0" width="38" height="38" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
-      <g stroke="#19c7d9" fill="none" stroke-width="1.5">
-        <path d="M 9 26 Q 9 30 15 30 L 22 30 Q 28 30 28 26 L 28 21 Q 28 17 22 17 L 16 17 Q 9 17 9 13 L 9 8 Q 9 4 15 4"/>
-        <path d="M 28 16 Q 28 11 22 11 L 16 11 Q 9 11 9 15"/>
+      <rect x="0" y="0" width="50" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+      <g stroke="#19c7d9" fill="none" stroke-width="2">
+        <path d="M 12 35 Q 12 40 19 40 L 30 40 Q 38 40 38 34 L 38 27 Q 38 21 30 21 L 21 21 Q 12 21 12 16 L 12 11 Q 12 5 19 5"/>
+        <path d="M 38 21 Q 38 15 30 15 L 21 15 Q 12 15 12 19"/>
       </g>
-      <circle cx="15" cy="8" r="1.3" fill="#19c7d9"/>
-      <circle cx="22" cy="30" r="1.3" fill="#19c7d9"/>
-      <text x="19" y="52" font-size="9" fill="#8a96ac" text-anchor="middle">python</text>
+      <circle cx="19" cy="11" r="1.7" fill="#19c7d9"/>
+      <circle cx="30" cy="40" r="1.7" fill="#19c7d9"/>
+      <text x="25" y="64" font-size="10" fill="#c9d1d9" text-anchor="middle">python</text>
     </g>
     <!-- icon 2: PyTorch -->
-    <g transform="translate(46,0)">
-      <rect x="0" y="0" width="38" height="38" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
-      <g stroke="#f29e2e" fill="none" stroke-width="1.5">
-        <path d="M 19 34 Q 9 28 11 18 Q 13 9 19 5 Q 25 9 27 18 Q 29 28 19 34 Z"/>
-        <path d="M 19 34 Q 16 24 19 17 Q 22 24 19 34 Z" fill="#f29e2e" fill-opacity="0.4"/>
+    <g transform="translate(55,0)">
+      <rect x="0" y="0" width="50" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+      <g stroke="#f29e2e" fill="none" stroke-width="2">
+        <path d="M 25 45 Q 12 37 14 23 Q 17 12 25 6 Q 33 12 36 23 Q 38 37 25 45 Z"/>
+        <path d="M 25 45 Q 21 32 25 22 Q 29 32 25 45 Z" fill="#f29e2e" fill-opacity="0.4"/>
       </g>
-      <text x="19" y="52" font-size="9" fill="#8a96ac" text-anchor="middle">pytorch</text>
+      <text x="25" y="64" font-size="10" fill="#c9d1d9" text-anchor="middle">pytorch</text>
     </g>
     <!-- icon 3: LangGraph -->
-    <g transform="translate(92,0)">
-      <rect x="0" y="0" width="38" height="38" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
-      <g stroke="#19c7d9" fill="#0a0e1a" stroke-width="1.5">
-        <line x1="9" y1="9"  x2="29" y2="15" stroke="#19c7d9" fill="none"/>
-        <line x1="9" y1="9"  x2="29" y2="23" stroke="#19c7d9" fill="none"/>
-        <line x1="29" y1="15" x2="9" y2="29" stroke="#19c7d9" fill="none"/>
-        <line x1="29" y1="23" x2="9" y2="29" stroke="#19c7d9" fill="none"/>
-        <circle cx="9"  cy="9"  r="3"/>
-        <circle cx="29" cy="15" r="3"/>
-        <circle cx="29" cy="23" r="3"/>
-        <circle cx="9"  cy="29" r="3"/>
+    <g transform="translate(110,0)">
+      <rect x="0" y="0" width="50" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+      <g stroke="#19c7d9" fill="#0a0e1a" stroke-width="2">
+        <line x1="12" y1="12" x2="38" y2="20" stroke="#19c7d9" fill="none"/>
+        <line x1="12" y1="12" x2="38" y2="30" stroke="#19c7d9" fill="none"/>
+        <line x1="38" y1="20" x2="12" y2="38" stroke="#19c7d9" fill="none"/>
+        <line x1="38" y1="30" x2="12" y2="38" stroke="#19c7d9" fill="none"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="38" cy="20" r="4"/>
+        <circle cx="38" cy="30" r="4"/>
+        <circle cx="12" cy="38" r="4"/>
       </g>
-      <text x="19" y="52" font-size="9" fill="#8a96ac" text-anchor="middle">langgraph</text>
+      <text x="25" y="64" font-size="10" fill="#c9d1d9" text-anchor="middle">langgraph</text>
     </g>
     <!-- icon 4: FastAPI -->
-    <g transform="translate(138,0)">
-      <rect x="0" y="0" width="38" height="38" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
-      <path d="M 20 5 L 11 21 L 17 21 L 15 33 L 26 15 L 20 15 Z" fill="#19c7d9" fill-opacity="0.3" stroke="#19c7d9" stroke-width="1.5"/>
-      <text x="19" y="52" font-size="9" fill="#8a96ac" text-anchor="middle">fastapi</text>
+    <g transform="translate(165,0)">
+      <rect x="0" y="0" width="50" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+      <path d="M 28 6 L 14 28 L 23 28 L 20 44 L 35 20 L 26 20 Z" fill="#19c7d9" fill-opacity="0.35" stroke="#19c7d9" stroke-width="2"/>
+      <text x="25" y="64" font-size="10" fill="#c9d1d9" text-anchor="middle">fastapi</text>
     </g>
-    <!-- icon 5: Docker -->
-    <g transform="translate(184,0)">
-      <rect x="0" y="0" width="38" height="38" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
-      <g stroke="#19c7d9" fill="none" stroke-width="1.5">
-        <rect x="6"  y="14" width="26" height="7"/>
-        <rect x="6"  y="22" width="16" height="7"/>
-        <rect x="6"  y="30" width="26" height="4"/>
-        <line x1="14" y1="14" x2="14" y2="7"/>
-        <line x1="22" y1="14" x2="22" y2="7"/>
+    <!-- icon 5: Docker (moved to row 2 col 1) — replaced by Linux -->
+    <!-- icon 5: Linux (penguin) -->
+    <g transform="translate(0,60)">
+      <rect x="0" y="0" width="50" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+      <g stroke="#f29e2e" fill="none" stroke-width="2">
+        <ellipse cx="25" cy="22" rx="9" ry="11"/>
+        <ellipse cx="25" cy="35" rx="12" ry="8"/>
+        <circle cx="22" cy="20" r="1.3" fill="#f29e2e" stroke="none"/>
+        <circle cx="28" cy="20" r="1.3" fill="#f29e2e" stroke="none"/>
+        <path d="M 19 24 Q 25 28 31 24" stroke-width="1.5"/>
+        <line x1="19" y1="33" x2="15" y2="40"/>
+        <line x1="31" y1="33" x2="35" y2="40"/>
+        <line x1="25" y1="40" x2="25" y2="44"/>
       </g>
-      <text x="19" y="52" font-size="9" fill="#8a96ac" text-anchor="middle">docker</text>
+      <text x="25" y="64" font-size="10" fill="#c9d1d9" text-anchor="middle">linux</text>
     </g>
     <!-- icon 6: AWS -->
-    <g transform="translate(0,60)">
-      <rect x="0" y="0" width="38" height="38" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
-      <g stroke="#f29e2e" fill="none" stroke-width="1.5">
-        <polygon points="19,4 31,11 31,24 19,31 7,24 7,11"/>
-        <polyline points="7,11 19,17 31,11"/>
-        <line x1="19" y1="17" x2="19" y2="31"/>
+    <g transform="translate(55,60)">
+      <rect x="0" y="0" width="50" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+      <g stroke="#f29e2e" fill="none" stroke-width="2">
+        <polygon points="25,6 41,14 41,32 25,40 9,32 9,14"/>
+        <polyline points="9,14 25,22 41,14"/>
+        <line x1="25" y1="22" x2="25" y2="40"/>
       </g>
-      <text x="19" y="52" font-size="9" fill="#8a96ac" text-anchor="middle">aws</text>
+      <text x="25" y="64" font-size="10" fill="#c9d1d9" text-anchor="middle">aws</text>
     </g>
     <!-- icon 7: MITRE -->
-    <g transform="translate(46,60)">
-      <rect x="0" y="0" width="38" height="38" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
-      <g stroke="#19c7d9" fill="none" stroke-width="1.5">
-        <path d="M 19 4 L 30 8 L 30 20 Q 30 28 19 33 Q 8 28 8 20 L 8 8 Z"/>
+    <g transform="translate(110,60)">
+      <rect x="0" y="0" width="50" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+      <g stroke="#19c7d9" fill="none" stroke-width="2">
+        <path d="M 25 6 L 39 11 L 39 27 Q 39 36 25 42 Q 11 36 11 27 L 11 11 Z"/>
       </g>
-      <text x="19" y="25" font-size="11" font-weight="700" fill="#19c7d9" text-anchor="middle">A&amp;</text>
-      <text x="19" y="52" font-size="9" fill="#8a96ac" text-anchor="middle">mitre</text>
+      <text x="25" y="33" font-size="14" font-weight="700" fill="#19c7d9" text-anchor="middle">A&amp;</text>
+      <text x="25" y="64" font-size="10" fill="#c9d1d9" text-anchor="middle">mitre</text>
     </g>
     <!-- icon 8: SHAP -->
-    <g transform="translate(92,60)">
-      <rect x="0" y="0" width="38" height="38" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
-      <line x1="7" y1="32" x2="32" y2="32" stroke="#8a96ac" stroke-width="1"/>
-      <rect x="9"  y="22" width="4" height="10" fill="#19c7d9"/>
-      <rect x="15" y="14" width="4" height="18" fill="#f29e2e"/>
-      <rect x="21" y="20" width="4" height="12" fill="#19c7d9"/>
-      <rect x="27" y="24" width="4" height="8"  fill="#f29e2e"/>
-      <text x="19" y="52" font-size="9" fill="#8a96ac" text-anchor="middle">shap</text>
+    <g transform="translate(165,60)">
+      <rect x="0" y="0" width="50" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+      <line x1="9" y1="42" x2="42" y2="42" stroke="#8a96ac" stroke-width="1"/>
+      <rect x="11" y="28" width="6" height="14" fill="#19c7d9"/>
+      <rect x="20" y="16" width="6" height="26" fill="#f29e2e"/>
+      <rect x="29" y="22" width="6" height="22" fill="#19c7d9"/>
+      <rect x="38" y="32" width="6" height="12" fill="#f29e2e"/>
+      <text x="25" y="64" font-size="10" fill="#c9d1d9" text-anchor="middle">shap</text>
     </g>
     <!-- icon 9: PAN-OS -->
-    <g transform="translate(138,60)">
-      <rect x="0" y="0" width="38" height="38" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
-      <g stroke="#19c7d9" fill="none" stroke-width="1.5">
-        <rect x="6"  y="10" width="10" height="6"/>
-        <rect x="20" y="10" width="10" height="6"/>
-        <rect x="11" y="18" width="10" height="6"/>
-        <rect x="25" y="18" width="6"  height="6"/>
-        <rect x="6"  y="26" width="10" height="6"/>
-        <rect x="20" y="26" width="10" height="6"/>
-        <line x1="6" y1="17" x2="30" y2="17" stroke-dasharray="2,2"/>
+    <g transform="translate(0,120)">
+      <rect x="0" y="0" width="50" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+      <g stroke="#19c7d9" fill="none" stroke-width="2">
+        <rect x="7"  y="12" width="14" height="8"/>
+        <rect x="27" y="12" width="14" height="8"/>
+        <rect x="14" y="22" width="14" height="8"/>
+        <rect x="33" y="22" width="8"  height="8"/>
+        <rect x="7"  y="32" width="14" height="8"/>
+        <rect x="27" y="32" width="14" height="8"/>
+        <line x1="7" y1="20" x2="41" y2="20" stroke-dasharray="2,2"/>
       </g>
-      <text x="19" y="52" font-size="9" fill="#8a96ac" text-anchor="middle">pan-os</text>
+      <text x="25" y="64" font-size="10" fill="#c9d1d9" text-anchor="middle">pan-os</text>
     </g>
     <!-- icon 10: Scapy -->
-    <g transform="translate(184,60)">
-      <rect x="0" y="0" width="38" height="38" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
-      <g stroke="#19c7d9" fill="none" stroke-width="1.5">
-        <circle cx="19" cy="19" r="13"/>
-        <circle cx="19" cy="19" r="7"  stroke-dasharray="2,2"/>
-        <line x1="19" y1="19" x2="28" y2="10" stroke="#f29e2e"/>
-        <circle cx="19" cy="19" r="1.5" fill="#19c7d9" stroke="none"/>
+    <g transform="translate(55,120)">
+      <rect x="0" y="0" width="50" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+      <g stroke="#19c7d9" fill="none" stroke-width="2">
+        <circle cx="25" cy="25" r="17"/>
+        <circle cx="25" cy="25" r="9"  stroke-dasharray="2,2"/>
+        <circle cx="25" cy="25" r="3"  stroke-dasharray="1,2"/>
+        <line x1="25" y1="25" x2="37" y2="13" stroke="#f29e2e" stroke-width="2.5"/>
+        <circle cx="25" cy="25" r="2" fill="#19c7d9" stroke="none"/>
       </g>
-      <text x="19" y="52" font-size="9" fill="#8a96ac" text-anchor="middle">scapy</text>
+      <text x="25" y="64" font-size="10" fill="#c9d1d9" text-anchor="middle">scapy</text>
+    </g>
+    <!-- icon 11: Pandas (data) -->
+    <g transform="translate(110,120)">
+      <rect x="0" y="0" width="50" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+      <g stroke="#19c7d9" fill="none" stroke-width="2">
+        <line x1="11" y1="42" x2="42" y2="42" stroke="#8a96ac"/>
+        <line x1="11" y1="42" x2="11" y2="8" stroke="#8a96ac"/>
+        <rect x="14" y="32" width="4" height="10" fill="#19c7d9" stroke="none"/>
+        <rect x="20" y="22" width="4" height="20" fill="#19c7d9" stroke="none"/>
+        <rect x="26" y="28" width="4" height="14" fill="#f29e2e" stroke="none"/>
+        <rect x="32" y="14" width="4" height="28" fill="#19c7d9" stroke="none"/>
+        <rect x="38" y="20" width="4" height="22" fill="#f29e2e" stroke="none"/>
+      </g>
+      <text x="25" y="64" font-size="10" fill="#c9d1d9" text-anchor="middle">pandas</text>
+    </g>
+    <!-- icon 12: Git -->
+    <g transform="translate(165,120)">
+      <rect x="0" y="0" width="50" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+      <g stroke="#f29e2e" fill="none" stroke-width="2.5">
+        <line x1="30" y1="14" x2="14" y2="36"/>
+        <line x1="36" y1="22" x2="20" y2="42"/>
+        <line x1="22" y1="22" x2="32" y2="14"/>
+        <circle cx="30" cy="14" r="4"/>
+        <circle cx="14" cy="36" r="4"/>
+        <circle cx="36" cy="22" r="4"/>
+      </g>
+      <text x="25" y="64" font-size="10" fill="#c9d1d9" text-anchor="middle">git</text>
     </g>
   </g>
 
-  <line x1="914" y1="266" x2="1158" y2="266" stroke="#1f2a44"/>
+  <line x1="906" y1="340" x2="1158" y2="340" stroke="#1f2a44"/>
 
   <!-- contact block -->
-  <g transform="translate(914,278)">
+  <g transform="translate(906,352)">
     <text x="0" y="0" font-size="11" fill="#8a96ac">// CONTACT</text>
     <g font-size="11" fill="#c9d1d9">
       <text x="0" y="22">&#x2709;  youssef.s.saleh</text>
       <text x="0" y="38">       @gmail.com</text>
       <text x="0" y="58">&#x2192;  /in/youssef-saleh</text>
       <text x="0" y="78">&#x2192;  /Youssef-Saleh</text>
-      <text x="0" y="98">&#x25B6;  launchgood-trust-</text>
-      <text x="0" y="114">        copilot.fly.dev</text>
     </g>
   </g>
 
   <!-- alert ticker / event log -->
-  <g transform="translate(914,410)">
+  <g transform="translate(906,452)">
     <text x="0" y="0" font-size="11" fill="#8a96ac">// RECENT EVENTS</text>
-    <rect x="0" y="10" width="244" height="170" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+    <rect x="0" y="10" width="252" height="150" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
     <g font-size="10">
       <text x="8" y="28" fill="#525568">10:02:14</text>
       <text x="64" y="28" fill="#4ade80">[OK]</text>
@@ -371,37 +420,127 @@
       <text x="100" y="92" fill="#c9d1d9">NetworkSage</text>
       <text x="8" y="106" fill="#c9d1d9">       7/7 eval cases pass</text>
 
-      <text x="8" y="124" fill="#525568">08:30:00</text>
-      <text x="64" y="124" fill="#19c7d9">[INFO]</text>
-      <text x="100" y="124" fill="#c9d1d9">thesis v4.2.6</text>
-      <text x="8" y="138" fill="#c9d1d9">       AUC 0.9952 &#x2713;</text>
+      <text x="8" y="124" fill="#525568">07:15:33</text>
+      <text x="64" y="124" fill="#4ade80">[OK]</text>
+      <text x="94" y="124" fill="#c9d1d9">Pacify v1.0</text>
+      <text x="8" y="138" fill="#c9d1d9">       shipped &#x2192; 4 repos</text>
+    </g>
+  </g>
 
-      <text x="8" y="156" fill="#525568">07:15:33</text>
-      <text x="64" y="156" fill="#4ade80">[OK]</text>
-      <text x="94" y="156" fill="#c9d1d9">Pacify v1.0</text>
-      <text x="8" y="170" fill="#c9d1d9">       shipped &#x2192; 4 repos</text>
+  <!-- ========== INCIDENT TIMELINE STRIP ========== -->
+  <rect x="30" y="652" width="1140" height="200" fill="#0d1322" stroke="#1f2a44" stroke-width="1"/>
+  <rect x="30" y="652" width="1140" height="22" fill="#11172a"/>
+  <text x="40" y="668" font-size="11" fill="#8a96ac">// INCIDENT TIMELINE &#x2014; 2022 &#x2192; 2026</text>
+  <text x="1162" y="668" font-size="11" fill="#19c7d9" text-anchor="end">0x04</text>
+
+  <!-- Timeline horizontal axis -->
+  <g transform="translate(60,750)">
+    <!-- main axis line -->
+    <line x1="0" y1="0" x2="1080" y2="0" stroke="#1f2a44" stroke-width="1"/>
+    <!-- year markers -->
+    <g font-size="10" fill="#8a96ac" text-anchor="middle">
+      <text x="0" y="20">2022</text>
+      <text x="216" y="20">2023</text>
+      <text x="432" y="20">2024</text>
+      <text x="648" y="20">2025</text>
+      <text x="864" y="20">2026</text>
+      <text x="1080" y="20">now</text>
+    </g>
+    <!-- year tick marks -->
+    <g stroke="#1f2a44" stroke-width="1">
+      <line x1="0" y1="-4" x2="0" y2="4"/>
+      <line x1="216" y1="-4" x2="216" y2="4"/>
+      <line x1="432" y1="-4" x2="432" y2="4"/>
+      <line x1="648" y1="-4" x2="648" y2="4"/>
+      <line x1="864" y1="-4" x2="864" y2="4"/>
+      <line x1="1080" y1="-4" x2="1080" y2="4"/>
+    </g>
+
+    <!-- Incident nodes -->
+    <!-- Node 1: Network engineering at UIdaho -->
+    <g transform="translate(140,0)">
+      <line x1="0" y1="0" x2="0" y2="-50" stroke="#19c7d9" stroke-width="0.5"/>
+      <circle cx="0" cy="-50" r="4" fill="#19c7d9" stroke="#0a0e1a" stroke-width="1.5"/>
+      <text x="0" y="-62" font-size="10" fill="#19c7d9" text-anchor="middle" font-weight="700">PAN-OS</text>
+      <text x="0" y="-74" font-size="9" fill="#8a96ac" text-anchor="middle">900+ firewall rules</text>
+      <text x="0" y="36" font-size="9" fill="#525568" text-anchor="middle">2022</text>
+    </g>
+    <!-- Node 2: M.Sc. starts -->
+    <g transform="translate(310,0)">
+      <line x1="0" y1="0" x2="0" y2="-50" stroke="#19c7d9" stroke-width="0.5"/>
+      <circle cx="0" cy="-50" r="4" fill="#19c7d9" stroke="#0a0e1a" stroke-width="1.5"/>
+      <text x="0" y="-62" font-size="10" fill="#19c7d9" text-anchor="middle" font-weight="700">M.Sc. CS</text>
+      <text x="0" y="-74" font-size="9" fill="#8a96ac" text-anchor="middle">U.Idaho, network+XAI</text>
+      <text x="0" y="36" font-size="9" fill="#525568" text-anchor="middle">2023</text>
+    </g>
+    <!-- Node 3: NetworkSage shipped -->
+    <g transform="translate(520,0)">
+      <line x1="0" y1="0" x2="0" y2="-50" stroke="#19c7d9" stroke-width="0.5"/>
+      <circle cx="0" cy="-50" r="4" fill="#19c7d9" stroke="#0a0e1a" stroke-width="1.5"/>
+      <text x="0" y="-62" font-size="10" fill="#19c7d9" text-anchor="middle" font-weight="700">NetworkSage</text>
+      <text x="0" y="-74" font-size="9" fill="#8a96ac" text-anchor="middle">multi-agent SOC</text>
+      <text x="0" y="36" font-size="9" fill="#525568" text-anchor="middle">2024</text>
+    </g>
+    <!-- Node 4: TrustEval launch (AMBER - highlight) -->
+    <g transform="translate(740,0)">
+      <line x1="0" y1="0" x2="0" y2="-50" stroke="#f29e2e" stroke-width="1.5"/>
+      <circle cx="0" cy="-50" r="6" fill="#f29e2e" stroke="#0a0e1a" stroke-width="2"/>
+      <circle cx="0" cy="-50" r="10" fill="none" stroke="#f29e2e" stroke-opacity="0.4" stroke-width="1"/>
+      <text x="0" y="-62" font-size="10" fill="#f29e2e" text-anchor="middle" font-weight="700">TrustEvalAI</text>
+      <text x="0" y="-74" font-size="9" fill="#c9d1d9" text-anchor="middle">T&amp;S copilot, live</text>
+      <text x="0" y="36" font-size="9" fill="#f29e2e" text-anchor="middle" font-weight="700">2025</text>
+    </g>
+    <!-- Node 5: M.Sc. conferred -->
+    <g transform="translate(960,0)">
+      <line x1="0" y1="0" x2="0" y2="-50" stroke="#4ade80" stroke-width="1.5"/>
+      <circle cx="0" cy="-50" r="6" fill="#4ade80" stroke="#0a0e1a" stroke-width="2"/>
+      <circle cx="0" cy="-50" r="10" fill="none" stroke="#4ade80" stroke-opacity="0.4" stroke-width="1"/>
+      <text x="0" y="-62" font-size="10" fill="#4ade80" text-anchor="middle" font-weight="700">M.Sc. conferred</text>
+      <text x="0" y="-74" font-size="9" fill="#c9d1d9" text-anchor="middle">thesis 96.8% acc</text>
+      <text x="0" y="36" font-size="9" fill="#4ade80" text-anchor="middle" font-weight="700">2026</text>
+    </g>
+
+    <!-- Pulsing current-marker (the "you are here" line) -->
+    <g transform="translate(1080,0)">
+      <circle cx="0" cy="0" r="5" fill="#19c7d9" stroke="#0a0e1a" stroke-width="2"/>
+      <circle cx="0" cy="0" r="9" fill="none" stroke="#19c7d9" stroke-opacity="0.5" stroke-width="1">
+        <animate attributeName="r" values="5;14;5" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="-12" y="-12" font-size="9" fill="#19c7d9" text-anchor="end" font-weight="700">YOU</text>
+      <text x="-12" y="-2" font-size="9" fill="#19c7d9" text-anchor="end" font-weight="700">ARE</text>
+      <text x="-12" y="8" font-size="9" fill="#19c7d9" text-anchor="end" font-weight="700">HERE</text>
+    </g>
+
+    <!-- Below-axis: minor events -->
+    <g font-size="9" fill="#525568" text-anchor="middle">
+      <text x="80" y="50">~  start PAN-OS automation</text>
+      <text x="250" y="50">~  thesis proposal</text>
+      <text x="400" y="50">~  XAI framework v1</text>
+      <text x="640" y="50">~  Pacify ship</text>
+      <text x="880" y="50">~  AUC peak</text>
     </g>
   </g>
 
   <!-- ========== FOOTER STATUS BAR ========== -->
-  <rect x="30" y="612" width="1140" height="28" fill="#11172a" stroke="#1f2a44" stroke-width="1"/>
-  <text x="44" y="631" font-size="12" fill="#19c7d9">&gt;_</text>
-  <text x="64" y="631" font-size="12" fill="#c9d1d9">type 'help' for commands</text>
-  <text x="240" y="631" font-size="12" fill="#8a96ac">// scroll down for full README</text>
-  <text x="700" y="631" font-size="12" fill="#8a96ac">PING</text>
-  <text x="730" y="631" font-size="12" fill="#c9d1d9">1ms</text>
-  <text x="770" y="631" font-size="12" fill="#8a96ac">CPU</text>
-  <text x="800" y="631" font-size="12" fill="#c9d1d9">12%</text>
-  <text x="836" y="631" font-size="12" fill="#8a96ac">MEM</text>
-  <text x="868" y="631" font-size="12" fill="#c9d1d9">2.1G</text>
-  <text x="906" y="631" font-size="12" fill="#8a96ac">RX</text>
-  <text x="932" y="631" font-size="12" fill="#4ade80">&#x25B2; 0</text>
-  <text x="966" y="631" font-size="12" fill="#8a96ac">TX</text>
-  <text x="992" y="631" font-size="12" fill="#f29e2e">&#x25BC; 1</text>
-  <text x="1024" y="631" font-size="12" fill="#8a96ac">ENC</text>
-  <text x="1054" y="631" font-size="12" fill="#c9d1d9">ECC-256</text>
-  <text x="1112" y="631" font-size="12" fill="#8a96ac">UTC</text>
-  <text x="1148" y="631" font-size="12" fill="#c9d1d9" text-anchor="end">14:00Z</text>
+  <rect x="30" y="862" width="1140" height="28" fill="#11172a" stroke="#1f2a44" stroke-width="1"/>
+  <text x="44" y="881" font-size="12" fill="#19c7d9">&gt;_</text>
+  <text x="64" y="881" font-size="12" fill="#c9d1d9">type 'help' for commands</text>
+  <text x="240" y="881" font-size="12" fill="#8a96ac">// scroll down for full README</text>
+  <text x="700" y="881" font-size="12" fill="#8a96ac">PING</text>
+  <text x="730" y="881" font-size="12" fill="#c9d1d9">1ms</text>
+  <text x="770" y="881" font-size="12" fill="#8a96ac">CPU</text>
+  <text x="800" y="881" font-size="12" fill="#c9d1d9">12%</text>
+  <text x="836" y="881" font-size="12" fill="#8a96ac">MEM</text>
+  <text x="868" y="881" font-size="12" fill="#c9d1d9">2.1G</text>
+  <text x="906" y="881" font-size="12" fill="#8a96ac">RX</text>
+  <text x="932" y="881" font-size="12" fill="#4ade80">&#x25B2; 0</text>
+  <text x="966" y="881" font-size="12" fill="#8a96ac">TX</text>
+  <text x="992" y="881" font-size="12" fill="#f29e2e">&#x25BC; 1</text>
+  <text x="1024" y="881" font-size="12" fill="#8a96ac">ENC</text>
+  <text x="1054" y="881" font-size="12" fill="#c9d1d9">ECC-256</text>
+  <text x="1112" y="881" font-size="12" fill="#8a96ac">UTC</text>
+  <text x="1148" y="881" font-size="12" fill="#c9d1d9" text-anchor="end">14:00Z</text>
 </svg>
 
 </div>
@@ -469,4 +608,4 @@ email:       youssef.s.saleh@gmail.com
   <a href="https://launchgood-trust-copilot.fly.dev/">Live demo</a>
 </p>
 
-<sub>:construction: hand-built. the hero is a 21 KB inline SVG that renders identically on every client — no external badges, no stats services, no broken images.</sub>
+<sub>:construction: hand-built. the hero is a 25 KB inline SVG that renders identically on every client — no external badges, no stats services, no broken images.</sub>
