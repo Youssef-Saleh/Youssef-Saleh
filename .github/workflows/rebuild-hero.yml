@@ -1,0 +1,57 @@
+name: rebuild-hero
+
+# This workflow rebuilds the GitHub profile hero SVG with LIVE data daily.
+# Status: NOT WIRED TO AUTO-RUN. To activate, change `workflow_dispatch` to
+# add `schedule:` block (see commented section below).
+#
+# Manual trigger only by default so the user controls when live data goes live.
+# The script (build_hero.py) and template (hero_v7_live_template.svg) handle
+# all the data fetching + SVG regeneration. The hero is committed to
+# hero_v7_live.svg and the README is updated to embed it.
+
+on:
+  workflow_dispatch:
+
+# TO ACTIVATE DAILY AUTO-REBUILD, UNCOMMENT THIS BLOCK:
+#
+# on:
+#   workflow_dispatch:
+#   schedule:
+#     - cron: '0 6 * * *'   # 06:00 UTC daily
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build hero with live data
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          python _render/build_hero.py \
+            --template _render/hero_v7_live_template.svg \
+            --out _render/hero_v7_live.svg \
+            --with-readme \
+            --fallback
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --exit-code _render/hero_v7_live.svg README.md; then
+            echo "no changes"
+          else
+            git add _render/hero_v7_live.svg README.md
+            git commit -m "chore: rebuild hero with live data [skip ci]"
+            git push
+          fi

@@ -1,0 +1,10 @@
+# Build artifacts
+_render/__pycache__/
+_render/.cache/
+
+# Live render previews (these are regenerated, not source)
+_preview/
+
+# Tooling
+*.pyc
+__pycache__/
