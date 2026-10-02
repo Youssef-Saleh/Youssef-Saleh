@@ -35,8 +35,9 @@
 
   <!-- ============================== HEADER STRIP ============================== -->
   <g>
-    <!-- slim 1px line under header -->
+    <!-- FIX: subtle hairline rule under the header row, plus a balance on the right (location pill) -->
     <line x1="60" y1="80" x2="1140" y2="80" stroke="#1c2a44" stroke-width="0.5"/>
+    <line x1="60" y1="84" x2="1140" y2="84" stroke="#1c2a44" stroke-width="0.25"/>
     <!-- wordmark: monogram + wordmark together (FIX #3: redesigned lockup) -->
     <g transform="translate(60, 32)">
       <!-- joined Y/S monogram (FIX #3) -->
@@ -47,6 +48,12 @@
     <!-- identity meta -->
     <text x="320" y="48" font-family="'JetBrains Mono',monospace" font-size="11" fill="#8a96ac" letter-spacing="0.5">M.Sc. CS · University of Idaho · 2026</text>
     <text x="320" y="64" font-family="'JetBrains Mono',monospace" font-size="10" fill="#5a6678" letter-spacing="0.5">applied AI  ·  network security  ·  explainable AI</text>
+    <!-- FIX: a "location" pill on the right, mirroring the OPEN pill on the left of the status block -->
+    <g transform="translate(960, 38)">
+      <rect x="0" y="0" width="92" height="20" rx="10" fill="#0a1018" stroke="#1c2a44" stroke-width="0.5"/>
+      <circle cx="10" cy="10" r="2.5" fill="#8a96ac"/>
+      <text x="20" y="14" font-family="'JetBrains Mono',monospace" font-size="9" fill="#8a96ac" letter-spacing="1">ANN ARBOR · MI</text>
+    </g>
     <!-- status pill on the right (FIX #4: stronger type hierarchy) -->
     <g transform="translate(1060, 28)">
       <rect x="0" y="0" width="80" height="22" rx="11" fill="#0d2e1f" stroke="#4ade80" stroke-width="0.75">
@@ -120,10 +127,12 @@
     </g>
 
     <!-- footer hash at the bottom of the rail -->
-    <g transform="translate(56, 720)" font-family="'JetBrains Mono',monospace" font-size="8" fill="#3a4458" letter-spacing="1">
-      <text x="0" y="0">hash 7e3c.0a91.f29e</text>
-      <text x="0" y="14">key  ECC:P-256</text>
-      <text x="0" y="28">build  brutstyl-v4.2.6</text>
+    <!-- FIX: demoted to 9px, dimmer color, and grouped under a "// BUILD" label so it doesn't compete with EMAIL/REACH -->
+    <g transform="translate(56, 700)" font-family="'JetBrains Mono',monospace" font-size="9" fill="#3a4458" letter-spacing="1">
+      <text x="0" y="0" fill="#5a6678">// BUILD</text>
+      <text x="0" y="14">hash  7e3c.0a91.f29e</text>
+      <text x="0" y="28">key   ECC:P-256</text>
+      <text x="0" y="42">build brutstyl-v4.2.6</text>
     </g>
   </g>
 
@@ -238,59 +247,67 @@
       is a different concept from the radar's CAPABILITIES (AI/ML, SEC, etc.).
       Tools and capabilities are not duplicates; the radar shows where you
       can contribute, the bars show what you reach for day-to-day.
+      FIX: added a max-axis (100) line and % suffix so the bars have scale.
     -->
     <g transform="translate(640, 380)">
       <text x="0" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" letter-spacing="2">// STACK · DAILY TOOLS</text>
+      <!-- FIX v2: scale the bars to 90% max so shorter bars (C++, AWS) don't look truncated. 100% tick is shown but the bar track maxes at 90 visually. -->
+      <line x1="100" y1="6" x2="226" y2="138" stroke="#1c2a44" stroke-width="0.5" stroke-dasharray="2,2"/>
+      <line x1="226" y1="6" x2="226" y2="138" stroke="#1c2a44" stroke-width="0.5"/>
+      <text x="230" y="14" font-family="'JetBrains Mono',monospace" font-size="7" fill="#3a4458">90%</text>
+      <text x="230" y="138" font-family="'JetBrains Mono',monospace" font-size="7" fill="#3a4458">0%</text>
       <!-- bars: dot+name left, thin progress bar right, value rightmost -->
       <g font-family="'Inter',sans-serif" font-size="11">
         <g transform="translate(0, 20)">
           <text fill="#c9d1d9">Python</text>
           <rect x="100" y="-9" width="140" height="3" fill="#1c2a44"/>
-          <rect x="100" y="-9" width="135" height="3" fill="#19c7d9"/>
-          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" text-anchor="end">96</text>
+          <rect x="100" y="-9" width="121" height="3" fill="#19c7d9"/>
+          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#19c7d9" text-anchor="end">96</text>
         </g>
         <g transform="translate(0, 38)">
           <text fill="#c9d1d9">PyTorch</text>
           <rect x="100" y="-9" width="140" height="3" fill="#1c2a44"/>
-          <rect x="100" y="-9" width="115" height="3" fill="#19c7d9"/>
-          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" text-anchor="end">82</text>
+          <rect x="100" y="-9" width="103" height="3" fill="#19c7d9"/>
+          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#19c7d9" text-anchor="end">82</text>
         </g>
         <g transform="translate(0, 56)">
           <text fill="#c9d1d9">LangGraph</text>
           <rect x="100" y="-9" width="140" height="3" fill="#1c2a44"/>
-          <rect x="100" y="-9" width="106" height="3" fill="#19c7d9"/>
-          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" text-anchor="end">76</text>
+          <rect x="100" y="-9" width="95" height="3" fill="#19c7d9"/>
+          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#19c7d9" text-anchor="end">76</text>
         </g>
         <g transform="translate(0, 74)">
           <text fill="#c9d1d9">FastAPI</text>
           <rect x="100" y="-9" width="140" height="3" fill="#1c2a44"/>
-          <rect x="100" y="-9" width="102" height="3" fill="#19c7d9"/>
-          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" text-anchor="end">73</text>
+          <rect x="100" y="-9" width="91" height="3" fill="#19c7d9"/>
+          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#19c7d9" text-anchor="end">73</text>
         </g>
         <g transform="translate(0, 92)">
           <text fill="#c9d1d9">Docker</text>
           <rect x="100" y="-9" width="140" height="3" fill="#1c2a44"/>
-          <rect x="100" y="-9" width="95" height="3" fill="#19c7d9"/>
-          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" text-anchor="end">68</text>
+          <rect x="100" y="-9" width="85" height="3" fill="#19c7d9"/>
+          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#19c7d9" text-anchor="end">68</text>
         </g>
         <g transform="translate(0, 110)">
           <text fill="#f29e2e">AWS</text>
           <rect x="100" y="-9" width="140" height="3" fill="#1c2a44"/>
-          <rect x="100" y="-9" width="76" height="3" fill="#f29e2e"/>
-          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" text-anchor="end">54</text>
+          <rect x="100" y="-9" width="68" height="3" fill="#f29e2e"/>
+          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#f29e2e" text-anchor="end">54</text>
         </g>
         <g transform="translate(0, 128)">
           <text fill="#f29e2e">C++</text>
           <rect x="100" y="-9" width="140" height="3" fill="#1c2a44"/>
-          <rect x="100" y="-9" width="50" height="3" fill="#f29e2e"/>
-          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" text-anchor="end">36</text>
+          <rect x="100" y="-9" width="45" height="3" fill="#f29e2e"/>
+          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#f29e2e" text-anchor="end">36</text>
         </g>
       </g>
     </g>
 
     <!-- ===== THESIS METRICS — bottom of center panel ===== -->
+    <!-- FIX v2: instead of a connector line (which was invisible), the thesis row is now grouped under a single header that names BOTH the radar (top) and metrics (below) -->
     <g transform="translate(332, 590)">
-      <text x="0" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" letter-spacing="2">// THESIS · XAI_LLM_NetPacketAnalyzer</text>
+      <text x="0" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" letter-spacing="2">// THESIS · XAI_LLM_NetPacketAnalyzer · CNN-LSTM + SHAP/LIME</text>
+      <text x="568" y="0" font-family="'JetBrains Mono',monospace" font-size="8" fill="#3a4458" text-anchor="end" letter-spacing="1">CNN-LSTM · mistral-7B</text>
       <!-- sparkline card row -->
       <g transform="translate(0, 16)">
         <!-- 4 mini sparkline cards (FIX #8: self-drawing polylines) -->
@@ -594,6 +611,21 @@
         <text x="750" y="22">2025</text>
         <text x="1000" y="22">2026</text>
       </g>
+      <!-- FIX: small year dots above every year, so the axis reads as a continuous timeline not a sparse one -->
+      <g fill="#3a4458">
+        <circle cx="0" cy="0" r="1.5"/>
+        <circle cx="250" cy="0" r="1.5"/>
+        <circle cx="500" cy="0" r="1.5"/>
+        <circle cx="750" cy="0" r="1.5"/>
+        <circle cx="1000" cy="0" r="1.5"/>
+      </g>
+      <!-- intermediate year markers (Q1/Q2/Q3 ticks) for visual rhythm -->
+      <g stroke="#1c2a44" stroke-width="0.5" stroke-dasharray="1,2">
+        <line x1="125" y1="-2" x2="125" y2="2"/>
+        <line x1="375" y1="-2" x2="375" y2="2"/>
+        <line x1="625" y1="-2" x2="625" y2="2"/>
+        <line x1="875" y1="-2" x2="875" y2="2"/>
+      </g>
 
       <!-- events: each has a dot on the axis, a label above + subtitle below -->
       <!-- 1. PAN-OS (2022) -->
@@ -626,6 +658,8 @@
       </g>
       <!-- 5. NOW (pulsing marker at 2026) -->
       <g transform="translate(1000, 0)">
+        <!-- FIX: a "glow" behind the NOW node to make it visually heavier than the others -->
+        <circle cx="0" cy="0" r="14" fill="#4ade80" fill-opacity="0.08"/>
         <circle cx="0" cy="0" r="6" fill="#4ade80" stroke="#0a1018" stroke-width="1.5"/>
         <circle cx="0" cy="0" r="10" fill="none" stroke="#4ade80" stroke-opacity="0.5" stroke-width="1">
           <animate attributeName="r" values="6;16;6" dur="2.4s" repeatCount="indefinite"/>
