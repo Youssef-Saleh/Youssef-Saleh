@@ -1,4 +1,5 @@
 """
+import sys
 render_preview.py — Render the GitHub profile README to a PNG so we can
 verify it visually before pushing to GitHub.
 
