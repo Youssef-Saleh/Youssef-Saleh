@@ -1,0 +1,256 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="'Inter','Cascadia Mono','Segoe UI',sans-serif">
+  <!-- =========================================================
+       OPERATOR CARD — "Hunt: Showdown"-style agent card.
+       A dossier of past operations, weapon loadouts, after-action reports.
+       The metaphors are thin: same facts, different framing.
+       ========================================================= -->
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a1410"/>
+      <stop offset="1" stop-color="#0a0e1a"/>
+    </linearGradient>
+    <linearGradient id="portrait" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a3548"/>
+      <stop offset="1" stop-color="#0d1322"/>
+    </linearGradient>
+    <linearGradient id="divider" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f29e2e" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#f29e2e" stop-opacity="1"/>
+      <stop offset="1" stop-color="#f29e2e" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="1200" height="900" fill="url(#bg)"/>
+  <!-- subtle radial vignette -->
+  <radialGradient id="vig" cx="0.5" cy="0.5" r="0.6">
+    <stop offset="0" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity="0.6"/>
+  </radialGradient>
+  <rect x="0" y="0" width="1200" height="900" fill="url(#vig)"/>
+
+  <!-- ============ TOP META BAR ============ -->
+  <rect x="0" y="0" width="1200" height="38" fill="#050810" stroke="#1f2a44" stroke-width="1"/>
+  <text x="20" y="24" font-size="11" fill="#525568" letter-spacing="2">DOSSIER // OPERATOR PROFILE // CLEARANCE: TI-2</text>
+  <text x="1180" y="24" font-size="11" fill="#525568" text-anchor="end">FILE #0x6F757373  ·  REV 4.2.6  ·  2026-10-02</text>
+  <line x1="0" y1="38" x2="1200" y2="38" stroke="#1f2a44"/>
+
+  <!-- ============ LEFT PORTRAIT BLOCK ============ -->
+  <g transform="translate(40, 70)">
+    <!-- portrait frame: a brutalist border around an abstract portrait area -->
+    <rect x="0" y="0" width="280" height="380" fill="url(#portrait)" stroke="#f29e2e" stroke-width="1"/>
+    <!-- corner brackets -->
+    <g stroke="#f29e2e" stroke-width="2" fill="none">
+      <path d="M 8 8 L 8 22 M 8 8 L 22 8"/>
+      <path d="M 272 8 L 272 22 M 272 8 L 258 8"/>
+      <path d="M 8 372 L 8 358 M 8 372 L 22 372"/>
+      <path d="M 272 372 L 272 358 M 272 372 L 258 372"/>
+    </g>
+
+    <!-- abstract portrait: a stylized head silhouette -->
+    <g transform="translate(140, 180)" fill="none" stroke="#19c7d9" stroke-width="2" stroke-opacity="0.8">
+      <!-- head -->
+      <ellipse cx="0" cy="-20" rx="60" ry="70"/>
+      <!-- shoulders -->
+      <path d="M -80 80 Q -60 30 0 30 Q 60 30 80 80"/>
+      <!-- "Y.S" inside the head -->
+      <text x="0" y="10" font-size="42" font-weight="700" fill="#19c7d9" stroke="none" text-anchor="middle" letter-spacing="-2">Y.S</text>
+    </g>
+
+    <!-- data overlays on portrait -->
+    <g font-size="9" fill="#19c7d9" font-family="'Cascadia Mono',monospace">
+      <text x="12" y="22">SCAN.SVC</text>
+      <text x="12" y="368">UNITS: 1</text>
+    </g>
+    <g font-size="9" fill="#f29e2e" font-family="'Cascadia Mono',monospace">
+      <text x="268" y="22" text-anchor="end">TI-2</text>
+      <text x="268" y="368" text-anchor="end">ACTIVE</text>
+    </g>
+
+    <!-- a small "threat indicator" bar at the bottom of the portrait -->
+    <rect x="12" y="354" width="256" height="6" fill="#1f2a44"/>
+    <rect x="12" y="354" width="180" height="6" fill="#4ade80"/>
+    <text x="140" y="348" font-size="9" fill="#4ade80" text-anchor="middle" font-family="'Cascadia Mono',monospace">DEPLOYMENT READINESS: 70%</text>
+  </g>
+
+  <!-- ============ OPERATOR NAME + ROLE ============ -->
+  <g transform="translate(360, 70)">
+    <text x="0" y="48" font-size="48" font-weight="800" fill="#c9d1d9" letter-spacing="-1">YOUSSEF SALEH</text>
+    <text x="0" y="78" font-size="14" fill="#19c7d9" letter-spacing="3">APPLIED AI  ·  NETWORK SECURITY  ·  XAI</text>
+    <line x1="0" y1="100" x2="800" y2="100" stroke="url(#divider)" stroke-width="1"/>
+
+    <!-- call sign / classification -->
+    <text x="0" y="124" font-size="11" fill="#8a96ac" font-family="'Cascadia Mono',monospace">CALL SIGN</text>
+    <text x="0" y="144" font-size="20" fill="#f29e2e" font-weight="700" font-family="'Cascadia Mono',monospace">"OUSSIF"</text>
+    <text x="200" y="124" font-size="11" fill="#8a96ac" font-family="'Cascadia Mono',monospace">REGION</text>
+    <text x="200" y="144" font-size="14" fill="#c9d1d9" font-family="'Cascadia Mono',monospace">Ann Arbor, MI</text>
+    <text x="400" y="124" font-size="11" fill="#8a96ac" font-family="'Cascadia Mono',monospace">CLEARANCE</text>
+    <text x="400" y="144" font-size="14" fill="#c9d1d9" font-family="'Cascadia Mono',monospace">M.Sc. CS, U.Idaho (2026)</text>
+    <text x="650" y="124" font-size="11" fill="#8a96ac" font-family="'Cascadia Mono',monospace">STATUS</text>
+    <text x="650" y="144" font-size="14" fill="#4ade80" font-weight="700" font-family="'Cascadia Mono',monospace">● OPEN TO WORK</text>
+  </g>
+
+  <!-- ============ LOADOUT (skills) ============ -->
+  <g transform="translate(40, 480)">
+    <rect x="0" y="0" width="1120" height="160" fill="#0d1322" stroke="#1f2a44" stroke-width="1"/>
+    <rect x="0" y="0" width="1120" height="22" fill="#11172a"/>
+    <text x="10" y="16" font-size="11" fill="#8a96ac" font-family="'Cascadia Mono',monospace">// LOADOUT  (PRIMARY = always on, SECONDARY = burst, SUPPORT = situational)</text>
+    <text x="1110" y="16" font-size="11" fill="#19c7d9" text-anchor="end" font-family="'Cascadia Mono',monospace">0xL0</text>
+
+    <!-- 8 loadout slots, each a small box with name + role + bar -->
+    <g transform="translate(20, 36)">
+      <!-- row of 8 items, 130px wide each, 50px tall -->
+      <!-- 1. Python -->
+      <g>
+        <rect x="0" y="0" width="128" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+        <text x="6" y="16" font-size="11" font-weight="700" fill="#19c7d9" font-family="'Cascadia Mono',monospace">PYTHON</text>
+        <text x="6" y="32" font-size="8" fill="#8a96ac" font-family="'Cascadia Mono',monospace">PRIMARY · LV 96</text>
+        <rect x="6" y="38" width="116" height="3" fill="#1f2a44"/>
+        <rect x="6" y="38" width="111" height="3" fill="#19c7d9"/>
+      </g>
+      <!-- 2. PyTorch -->
+      <g transform="translate(136, 0)">
+        <rect x="0" y="0" width="128" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+        <text x="6" y="16" font-size="11" font-weight="700" fill="#19c7d9" font-family="'Cascadia Mono',monospace">PYTORCH</text>
+        <text x="6" y="32" font-size="8" fill="#8a96ac" font-family="'Cascadia Mono',monospace">PRIMARY · LV 82</text>
+        <rect x="6" y="38" width="116" height="3" fill="#1f2a44"/>
+        <rect x="6" y="38" width="95" height="3" fill="#19c7d9"/>
+      </g>
+      <!-- 3. LangGraph -->
+      <g transform="translate(272, 0)">
+        <rect x="0" y="0" width="128" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+        <text x="6" y="16" font-size="11" font-weight="700" fill="#19c7d9" font-family="'Cascadia Mono',monospace">LANGGRAPH</text>
+        <text x="6" y="32" font-size="8" fill="#8a96ac" font-family="'Cascadia Mono',monospace">SECONDARY · LV 76</text>
+        <rect x="6" y="38" width="116" height="3" fill="#1f2a44"/>
+        <rect x="6" y="38" width="88" height="3" fill="#19c7d9"/>
+      </g>
+      <!-- 4. FastAPI -->
+      <g transform="translate(408, 0)">
+        <rect x="0" y="0" width="128" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+        <text x="6" y="16" font-size="11" font-weight="700" fill="#19c7d9" font-family="'Cascadia Mono',monospace">FASTAPI</text>
+        <text x="6" y="32" font-size="8" fill="#8a96ac" font-family="'Cascadia Mono',monospace">SECONDARY · LV 73</text>
+        <rect x="6" y="38" width="116" height="3" fill="#1f2a44"/>
+        <rect x="6" y="38" width="85" height="3" fill="#19c7d9"/>
+      </g>
+      <!-- 5. Docker -->
+      <g transform="translate(544, 0)">
+        <rect x="0" y="0" width="128" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+        <text x="6" y="16" font-size="11" font-weight="700" fill="#19c7d9" font-family="'Cascadia Mono',monospace">DOCKER</text>
+        <text x="6" y="32" font-size="8" fill="#8a96ac" font-family="'Cascadia Mono',monospace">SUPPORT · LV 68</text>
+        <rect x="6" y="38" width="116" height="3" fill="#1f2a44"/>
+        <rect x="6" y="38" width="79" height="3" fill="#19c7d9"/>
+      </g>
+      <!-- 6. AWS -->
+      <g transform="translate(680, 0)">
+        <rect x="0" y="0" width="128" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+        <text x="6" y="16" font-size="11" font-weight="700" fill="#f29e2e" font-family="'Cascadia Mono',monospace">AWS</text>
+        <text x="6" y="32" font-size="8" fill="#8a96ac" font-family="'Cascadia Mono',monospace">SUPPORT · LV 54</text>
+        <rect x="6" y="38" width="116" height="3" fill="#1f2a44"/>
+        <rect x="6" y="38" width="63" height="3" fill="#f29e2e"/>
+      </g>
+      <!-- 7. PAN-OS -->
+      <g transform="translate(816, 0)">
+        <rect x="0" y="0" width="128" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+        <text x="6" y="16" font-size="11" font-weight="700" fill="#f29e2e" font-family="'Cascadia Mono',monospace">PAN-OS</text>
+        <text x="6" y="32" font-size="8" fill="#8a96ac" font-family="'Cascadia Mono',monospace">SUPPORT · LV 80</text>
+        <rect x="6" y="38" width="116" height="3" fill="#1f2a44"/>
+        <rect x="6" y="38" width="93" height="3" fill="#f29e2e"/>
+      </g>
+      <!-- 8. Scapy -->
+      <g transform="translate(952, 0)">
+        <rect x="0" y="0" width="108" height="50" fill="#050810" stroke="#1f2a44" stroke-width="0.5"/>
+        <text x="6" y="16" font-size="11" font-weight="700" fill="#f29e2e" font-family="'Cascadia Mono',monospace">SCAPY</text>
+        <text x="6" y="32" font-size="8" fill="#8a96ac" font-family="'Cascadia Mono',monospace">BURST · LV 70</text>
+        <rect x="6" y="38" width="96" height="3" fill="#1f2a44"/>
+        <rect x="6" y="38" width="67" height="3" fill="#f29e2e"/>
+      </g>
+    </g>
+
+    <!-- secondary row: cooldowns / utility -->
+    <g transform="translate(20, 100)" font-family="'Cascadia Mono',monospace" font-size="9" fill="#525568">
+      <text x="0" y="0">cooldowns:</text>
+      <text x="80" y="0" fill="#19c7d9">LangGraph 12s</text>
+      <text x="220" y="0" fill="#19c7d9">FastAPI 8s</text>
+      <text x="340" y="0" fill="#f29e2e">AWS 60s</text>
+      <text x="430" y="0" fill="#f29e2e">Scapy 30s</text>
+      <text x="540" y="0" fill="#8a96ac">remaining AP: 0</text>
+      <text x="680" y="0" fill="#8a96ac">endorsements: 0</text>
+      <text x="820" y="0" fill="#8a96ac">tactical retreat: 0</text>
+    </g>
+  </g>
+
+  <!-- ============ MISSION LOG (after-action reports) ============ -->
+  <g transform="translate(40, 660)">
+    <rect x="0" y="0" width="1120" height="180" fill="#0d1322" stroke="#1f2a44" stroke-width="1"/>
+    <rect x="0" y="0" width="1120" height="22" fill="#11172a"/>
+    <text x="10" y="16" font-size="11" fill="#8a96ac" font-family="'Cascadia Mono',monospace">// MISSION LOG  (after-action reports)</text>
+    <text x="1110" y="16" font-size="11" fill="#19c7d9" text-anchor="end" font-family="'Cascadia Mono',monospace">4 missions logged</text>
+
+    <!-- 4 mission rows, each with OP code, status, summary -->
+    <g transform="translate(20, 38)" font-family="'Cascadia Mono',monospace">
+      <!-- mission 1 -->
+      <g>
+        <text x="0" y="14" font-size="10" fill="#19c7d9">OP:PACIFY</text>
+        <text x="100" y="14" font-size="10" fill="#8a96ac">2025-08</text>
+        <text x="180" y="14" font-size="10" fill="#4ade80">● SHIPPED</text>
+        <text x="280" y="14" font-size="10" fill="#c9d1d9">4 repos released (FE / BE / Android / E2E)</text>
+        <text x="700" y="14" font-size="10" fill="#8a96ac">casualties: 0</text>
+        <text x="850" y="14" font-size="10" fill="#8a96ac">rollbacks: 0</text>
+        <text x="970" y="14" font-size="10" fill="#8a96ac">team: 4</text>
+        <text x="1050" y="14" font-size="10" fill="#4ade80">A+</text>
+      </g>
+      <line x1="0" y1="22" x2="1080" y2="22" stroke="#1f2a44" stroke-opacity="0.3"/>
+
+      <!-- mission 2 -->
+      <g transform="translate(0, 28)">
+        <text x="0" y="14" font-size="10" fill="#19c7d9">OP:NETWORKSAGE</text>
+        <text x="100" y="14" font-size="10" fill="#8a96ac">2024-12</text>
+        <text x="180" y="14" font-size="10" fill="#4ade80">● SHIPPED</text>
+        <text x="280" y="14" font-size="10" fill="#c9d1d9">4-agent SOC pipeline, AttributionRef layer</text>
+        <text x="700" y="14" font-size="10" fill="#8a96ac">casualties: 0</text>
+        <text x="850" y="14" font-size="10" fill="#8a96ac">rollbacks: 0</text>
+        <text x="970" y="14" font-size="10" fill="#8a96ac">team: 1</text>
+        <text x="1050" y="14" font-size="10" fill="#4ade80">A</text>
+      </g>
+      <line x1="0" y1="50" x2="1080" y2="50" stroke="#1f2a44" stroke-opacity="0.3"/>
+
+      <!-- mission 3 -->
+      <g transform="translate(0, 56)">
+        <text x="0" y="14" font-size="10" fill="#f29e2e">OP:TRUSTEVAL-AI</text>
+        <text x="100" y="14" font-size="10" fill="#8a96ac">2025-Q4</text>
+        <text x="180" y="14" font-size="10" fill="#19c7d9">● ACTIVE</text>
+        <text x="280" y="14" font-size="10" fill="#c9d1d9">multi-agent T&amp;S copilot, deployed to fly.io</text>
+        <text x="700" y="14" font-size="10" fill="#8a96ac">7/7 eval pass</text>
+        <text x="850" y="14" font-size="10" fill="#8a96ac">casualties: 0</text>
+        <text x="970" y="14" font-size="10" fill="#8a96ac">team: 1</text>
+        <text x="1050" y="14" font-size="10" fill="#19c7d9">IN PROG</text>
+      </g>
+      <line x1="0" y1="78" x2="1080" y2="78" stroke="#1f2a44" stroke-opacity="0.3"/>
+
+      <!-- mission 4 -->
+      <g transform="translate(0, 84)">
+        <text x="0" y="14" font-size="10" fill="#19c7d9">OP:THESIS</text>
+        <text x="100" y="14" font-size="10" fill="#8a96ac">2023-2026</text>
+        <text x="180" y="14" font-size="10" fill="#4ade80">● CONFERRED</text>
+        <text x="280" y="14" font-size="10" fill="#c9d1d9">XAI for netsec, 96.8% acc, AUC 0.9952</text>
+        <text x="700" y="14" font-size="10" fill="#8a96ac">halluc: 5.5%</text>
+        <text x="850" y="14" font-size="10" fill="#8a96ac">defended: yes</text>
+        <text x="970" y="14" font-size="10" fill="#8a96ac">years: 3</text>
+        <text x="1050" y="14" font-size="10" fill="#4ade80">M.Sc.</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============ FOOTER ============ -->
+  <line x1="0" y1="850" x2="1200" y2="850" stroke="#1f2a44"/>
+  <g font-family="'Cascadia Mono',monospace" font-size="11">
+    <text x="40" y="876" fill="#8a96ac">CONTACT</text>
+    <text x="120" y="876" fill="#c9d1d9">youssef.s.saleh@gmail.com</text>
+    <text x="430" y="876" fill="#8a96ac">/</text>
+    <text x="445" y="876" fill="#c9d1d9">github.com/Youssef-Saleh</text>
+    <text x="690" y="876" fill="#8a96ac">/</text>
+    <text x="705" y="876" fill="#c9d1d9">/in/youssef-saleh</text>
+    <text x="1180" y="876" fill="#f29e2e" text-anchor="end" font-weight="700">$ deploy_youssef</text>
+  </g>
+</svg>

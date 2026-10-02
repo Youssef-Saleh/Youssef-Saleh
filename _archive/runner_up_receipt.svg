@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" font-family="'Courier New','Cascadia Mono','Consolas',monospace">
+  <!-- =========================================================
+       THE RECEIPT — A thermal-printer hero for Youssef Saleh.
+       Off-white paper, monospace, narrative order.
+       No badges, no dashboards. Just a printed record.
+       ========================================================= -->
+
+  <defs>
+    <!-- paper texture: faint horizontal banding to suggest thermal print -->
+    <pattern id="paperGrain" patternUnits="userSpaceOnUse" width="3" height="3">
+      <rect width="3" height="3" fill="#f4f1e8"/>
+      <rect width="3" height="1" fill="#e8e4d4" fill-opacity="0.35"/>
+    </pattern>
+    <!-- thermal print fade: alpha gradient that darkens towards bottom -->
+    <linearGradient id="thermalFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="0.7" stop-color="#000" stop-opacity="0"/>
+      <stop offset="0.92" stop-color="#000" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+    <!-- ink: pure black, but rendered with slight transparency to look printed -->
+  </defs>
+
+  <!-- paper -->
+  <rect x="0" y="0" width="800" height="1200" fill="url(#paperGrain)"/>
+  <!-- subtle vertical center crease (like a folded receipt) -->
+  <line x1="400" y1="0" x2="400" y2="1200" stroke="#d4cfb8" stroke-width="0.5" stroke-opacity="0.4"/>
+
+  <!-- the ink: text gets a very slight transparency to look thermal-printed -->
+  <g fill="#1a1814" fill-opacity="0.92">
+
+    <!-- ====================================================
+         TOP MARGIN — blank thermal paper feel
+         ==================================================== -->
+
+    <!-- header bar (thick black line) -->
+    <rect x="60" y="60" width="680" height="3" fill="#1a1814"/>
+
+    <!-- store logo / wordmark -->
+    <text x="400" y="100" font-size="22" font-weight="900" text-anchor="middle" letter-spacing="2">YOUSSEF SALEH</text>
+    <text x="400" y="120" font-size="10" text-anchor="middle" letter-spacing="1" fill-opacity="0.7">M.Sc. COMPUTER SCIENCE  ·  ANN ARBOR, MI</text>
+
+    <!-- header bar (thin) -->
+    <rect x="60" y="135" width="680" height="1" fill="#1a1814"/>
+
+    <!-- ====================================================
+         BODY — narrative
+         ==================================================== -->
+
+    <!-- opening -->
+    <text x="60" y="170" font-size="12">  THANK YOU FOR YOUR INTEREST</text>
+    <text x="60" y="186" font-size="12">  IN A NETWORK-SECURITY-AI ENGINEER.</text>
+    <text x="60" y="202" font-size="12">  HERE IS WHAT YOU GET:</text>
+
+    <text x="60" y="240" font-size="12">  ----------------------------------------</text>
+
+    <!-- ITEM 1: degree -->
+    <text x="60" y="270" font-size="12" font-weight="700">  1×  M.Sc. Computer Science</text>
+    <text x="60" y="286" font-size="11" fill-opacity="0.7">      University of Idaho, 2026</text>
+    <text x="60" y="300" font-size="11" fill-opacity="0.7">      thesis: explainable AI for netsec</text>
+    <text x="740" y="270" font-size="12" text-anchor="end">FREE</text>
+
+    <text x="60" y="328" font-size="12">  ----------------------------------------</text>
+
+    <!-- ITEM 2: TrustEvaluatorAI -->
+    <text x="60" y="358" font-size="12" font-weight="700">  1×  TrustEvaluatorAI (LIVE)</text>
+    <text x="60" y="374" font-size="11" fill-opacity="0.7">      multi-agent T&amp;S copilot</text>
+    <text x="60" y="388" font-size="11" fill-opacity="0.7">      5 agents · LangGraph · Fly.io</text>
+    <text x="60" y="402" font-size="11" fill-opacity="0.7">      7/7 eval cases passing</text>
+    <text x="740" y="358" font-size="12" text-anchor="end">FREE</text>
+
+    <text x="60" y="430" font-size="12">  ----------------------------------------</text>
+
+    <!-- ITEM 3: Pacify -->
+    <text x="60" y="460" font-size="12" font-weight="700">  1×  Pacify v1.0 (SHIPPED)</text>
+    <text x="60" y="476" font-size="11" fill-opacity="0.7">      full-stack patient platform</text>
+    <text x="60" y="490" font-size="11" fill-opacity="0.7">      React · Node · Android · Cypress</text>
+    <text x="60" y="504" font-size="11" fill-opacity="0.7">      4 repos · 0 rollbacks</text>
+    <text x="740" y="460" font-size="12" text-anchor="end">FREE</text>
+
+    <text x="60" y="532" font-size="12">  ----------------------------------------</text>
+
+    <!-- ITEM 4: NetworkSage -->
+    <text x="60" y="562" font-size="12" font-weight="700">  1×  NetworkSage (LIVE)</text>
+    <text x="60" y="578" font-size="11" fill-opacity="0.7">      multi-agent SOC analyst</text>
+    <text x="60" y="592" font-size="11" fill-opacity="0.7">      full AttributionRef layer</text>
+    <text x="60" y="606" font-size="11" fill-opacity="0.7">      19/19 unit tests passing</text>
+    <text x="740" y="562" font-size="12" text-anchor="end">FREE</text>
+
+    <text x="60" y="634" font-size="12">  ----------------------------------------</text>
+
+    <!-- ITEM 5: thesis -->
+    <text x="60" y="664" font-size="12" font-weight="700">  1×  XAI Network Packet Analyzer</text>
+    <text x="60" y="680" font-size="11" fill-opacity="0.7">      CNN-LSTM + SHAP/LIME + Mistral-7B</text>
+    <text x="60" y="694" font-size="11" fill-opacity="0.7">      UNSW-NB15 · NSL-KDD</text>
+    <text x="60" y="708" font-size="11" fill-opacity="0.7">      acc 96.8% · f1 0.9675 · auc 0.9952</text>
+    <text x="740" y="664" font-size="12" text-anchor="end">FREE</text>
+
+    <text x="60" y="736" font-size="12">  ----------------------------------------</text>
+
+    <!-- subtotal line -->
+    <text x="60" y="770" font-size="14" font-weight="700">  SUBTOTAL                        $0.00</text>
+    <text x="60" y="788" font-size="12">  DISCOUNT (M.Sc. just conferred)  -$0.00</text>
+    <rect x="60" y="800" width="680" height="1" fill="#1a1814"/>
+
+    <!-- TOTAL — the punchline -->
+    <text x="60" y="830" font-size="22" font-weight="900">  TOTAL                           $0.00</text>
+
+    <rect x="60" y="848" width="680" height="1" fill="#1a1814"/>
+
+    <!-- ====================================================
+         "RECEIPT FOOTER" — info that would print on a real receipt
+         ==================================================== -->
+
+    <!-- skills summary -->
+    <text x="60" y="884" font-size="12">  ----------------------------------------</text>
+    <text x="60" y="912" font-size="11" font-weight="700">  FOCUS</text>
+    <text x="60" y="928" font-size="11" fill-opacity="0.7">  XAI · LLM agents · network security</text>
+
+    <text x="60" y="956" font-size="11" font-weight="700">  STACK</text>
+    <text x="60" y="972" font-size="11" fill-opacity="0.7">  Python · PyTorch · LangGraph · FastAPI</text>
+    <text x="60" y="986" font-size="11" fill-opacity="0.7">  Docker · AWS · PAN-OS · Scapy</text>
+
+    <text x="60" y="1014" font-size="11" font-weight="700">  AVAILABILITY</text>
+    <text x="60" y="1030" font-size="11" fill-opacity="0.7">  open · contact for details</text>
+
+    <text x="60" y="1058" font-size="11" font-weight="700">  CONTACT</text>
+    <text x="60" y="1074" font-size="11" fill-opacity="0.7">  youssef.s.saleh@gmail.com</text>
+    <text x="60" y="1088" font-size="11" fill-opacity="0.7">  github.com/Youssef-Saleh</text>
+    <text x="60" y="1102" font-size="11" fill-opacity="0.7">  linkedin.com/in/youssef-saleh</text>
+
+    <!-- ====================================================
+         RECEIPT FOOTER TEXT
+         ==================================================== -->
+    <text x="60" y="1140" font-size="10" fill-opacity="0.6">  ----------------------------------------</text>
+    <text x="60" y="1158" font-size="10" fill-opacity="0.6">  TXN #0x6F75737365    2026-10-02  14:00Z</text>
+    <text x="60" y="1172" font-size="10" fill-opacity="0.6">  CASHIER: y.saleh    REGISTER: github.io</text>
+
+  </g>
+
+  <!-- thermal fade overlay: bottom 30% gets progressively faded -->
+  <rect x="0" y="0" width="800" height="1200" fill="url(#thermalFade)" pointer-events="none"/>
+</svg>
