@@ -17,6 +17,11 @@
       <stop offset="0" stop-color="#0a1020"/>
       <stop offset="1" stop-color="#050810"/>
     </linearGradient>
+    <!-- amber alert-tape diagonal stripe pattern -->
+    <pattern id="alertStripe" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#0a0e1a"/>
+      <rect width="4" height="8" fill="#f29e2e"/>
+    </pattern>
   </defs>
 
   <!-- ========== OUTER MONITOR FRAME ========== -->
@@ -502,6 +507,11 @@
 
     <!-- Pulsing current-marker (the "you are here" line) -->
     <g transform="translate(1080,0)">
+      <!-- amber alert tape behind the marker -->
+      <g opacity="0.35">
+        <rect x="-22" y="-46" width="44" height="92" fill="url(#alertStripe)"/>
+        <rect x="-22" y="-46" width="44" height="92" fill="none" stroke="#f29e2e" stroke-width="1"/>
+      </g>
       <circle cx="0" cy="0" r="5" fill="#19c7d9" stroke="#0a0e1a" stroke-width="2"/>
       <circle cx="0" cy="0" r="9" fill="none" stroke="#19c7d9" stroke-opacity="0.5" stroke-width="1">
         <animate attributeName="r" values="5;14;5" dur="2s" repeatCount="indefinite"/>
@@ -608,4 +618,4 @@ email:       youssef.s.saleh@gmail.com
   <a href="https://launchgood-trust-copilot.fly.dev/">Live demo</a>
 </p>
 
-<sub>:construction: hand-built. the hero is a 25 KB inline SVG that renders identically on every client — no external badges, no stats services, no broken images.</sub>
+<sub>:construction: hand-built. the hero is a 26 KB inline SVG that renders identically on every client — no external badges, no stats services, no broken images. animated "YOU ARE HERE" marker pulses on the timeline.</sub>

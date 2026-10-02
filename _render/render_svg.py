@@ -267,19 +267,24 @@ def render(svg_text, out_path, target_w=1400, bg=(0,0,0,0)):
     # For each <g transform="translate(tx,ty)">, find the matching </g> end
     # using a simple stack walk over the text. Then for each drawable, the
     # active transforms are the g's whose start is before pos and end is after pos.
-    g_ranges = []  # list of (start, end, tx, ty)
-    g_open_stack = []  # stack of (start, tx, ty)
-    pos = 0
+    # CRITICAL: we must track ALL <g>/</g> pairs, not just translated ones,
+    # otherwise the closing tag of an inner non-translated g pops the wrong g
+    # from the stack (it pops the parent instead of the inner).
+    g_ranges = []  # list of (start, end, tx, ty) — only for translated g's
+    g_open_stack = []  # stack of ALL g's, with (start, tx, ty or None)
     for m in re.finditer(r'<g\b([^>]*)>|</g>', svg_clean):
         if m.group(0).startswith('</'):
             if g_open_stack:
                 start, tx, ty = g_open_stack.pop()
-                g_ranges.append((start, m.end(), tx, ty))
+                if tx is not None:
+                    g_ranges.append((start, m.end(), tx, ty))
         else:
-            t = _attr(m.group(1), 'transform', '')
-            tm = re.search(r'translate\(\s*(-?[\d.]+)[ ,]+(-?[\d.]+)\s*\)', t)
-            if tm:
-                g_open_stack.append((m.start(), float(tm.group(1)), float(tm.group(2))))
+            t = re.search(r'translate\(\s*(-?[\d.]+)[ ,]+(-?[\d.]+)\s*\)', m.group(1))
+            if tm_m := t:
+                g_open_stack.append((m.start(), float(tm_m.group(1)), float(tm_m.group(2))))
+            else:
+                # non-translated g — still track on the stack so the close matches
+                g_open_stack.append((m.start(), None, None))
     # g_ranges now contains (start, end, tx, ty) for each translated <g>
 
     def active_transforms_at(pos):
