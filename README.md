@@ -42,7 +42,7 @@ Applied AI · Network Security · Explainable AI
 | [GP-MSI](https://github.com/Youssef-Saleh/GP-MSI) | Bachelor Project MSI analysis |
 
 <details>
-<summary><strong>15 more repositories</strong></summary>
+<summary><strong>more repositories</strong></summary>
 
 | Repo | Description |
 |:---|:---|
