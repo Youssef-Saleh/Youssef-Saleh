@@ -1,6 +1,6 @@
 <div align="center">
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1100" font-family="'Inter','Segoe UI','Helvetica Neue',sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="'Inter','Segoe UI','Helvetica Neue',sans-serif">
   <!-- =========================================================
        C2 CONSOLE v7 — designer-pass redesign
        Five flaws fixed:
@@ -128,57 +128,6 @@
       <text x="0" y="300" font-family="'Inter',sans-serif" font-size="11" fill="#8a96ac">live demo (TrustEval)</text>
     </g>
 
-    <!-- ===== STACK LIST (v8: moved from center to left rail, compact vertical list) ===== -->
-    <g transform="translate(56, 380)">
-      <text x="0" y="0" font-family="'JetBrains Mono',monospace" font-size="8" fill="#5a6678" letter-spacing="2">STACK · DAILY TOOLS</text>
-      <line x1="0" y1="6" x2="208" y2="6" stroke="#1c2a44" stroke-width="0.5"/>
-      <!-- each tool: name + thin bar + value, all 30px row pitch -->
-      <g font-family="'Inter',sans-serif" font-size="10">
-        <g transform="translate(0, 24)">
-          <text fill="#c9d1d9">Python</text>
-          <rect x="0" y="6" width="208" height="2" fill="#1c2a44"/>
-          <rect x="0" y="6" width="200" height="2" fill="#19c7d9"/>
-          <text x="208" y="0" font-family="'JetBrains Mono',monospace" font-size="8" fill="#19c7d9" text-anchor="end">96</text>
-        </g>
-        <g transform="translate(0, 48)">
-          <text fill="#c9d1d9">PyTorch</text>
-          <rect x="0" y="6" width="208" height="2" fill="#1c2a44"/>
-          <rect x="0" y="6" width="170" height="2" fill="#19c7d9"/>
-          <text x="208" y="0" font-family="'JetBrains Mono',monospace" font-size="8" fill="#19c7d9" text-anchor="end">82</text>
-        </g>
-        <g transform="translate(0, 72)">
-          <text fill="#c9d1d9">LangGraph</text>
-          <rect x="0" y="6" width="208" height="2" fill="#1c2a44"/>
-          <rect x="0" y="6" width="158" height="2" fill="#19c7d9"/>
-          <text x="208" y="0" font-family="'JetBrains Mono',monospace" font-size="8" fill="#19c7d9" text-anchor="end">76</text>
-        </g>
-        <g transform="translate(0, 96)">
-          <text fill="#c9d1d9">FastAPI</text>
-          <rect x="0" y="6" width="208" height="2" fill="#1c2a44"/>
-          <rect x="0" y="6" width="152" height="2" fill="#19c7d9"/>
-          <text x="208" y="0" font-family="'JetBrains Mono',monospace" font-size="8" fill="#19c7d9" text-anchor="end">73</text>
-        </g>
-        <g transform="translate(0, 120)">
-          <text fill="#c9d1d9">Docker</text>
-          <rect x="0" y="6" width="208" height="2" fill="#1c2a44"/>
-          <rect x="0" y="6" width="141" height="2" fill="#19c7d9"/>
-          <text x="208" y="0" font-family="'JetBrains Mono',monospace" font-size="8" fill="#19c7d9" text-anchor="end">68</text>
-        </g>
-        <g transform="translate(0, 144)">
-          <text fill="#f29e2e">AWS</text>
-          <rect x="0" y="6" width="208" height="2" fill="#1c2a44"/>
-          <rect x="0" y="6" width="112" height="2" fill="#f29e2e"/>
-          <text x="208" y="0" font-family="'JetBrains Mono',monospace" font-size="8" fill="#f29e2e" text-anchor="end">54</text>
-        </g>
-        <g transform="translate(0, 168)">
-          <text fill="#f29e2e">C++</text>
-          <rect x="0" y="6" width="208" height="2" fill="#1c2a44"/>
-          <rect x="0" y="6" width="75" height="2" fill="#f29e2e"/>
-          <text x="208" y="0" font-family="'JetBrains Mono',monospace" font-size="8" fill="#f29e2e" text-anchor="end">36</text>
-        </g>
-      </g>
-    </g>
-
     <!-- footer hash at the bottom of the rail -->
     <!-- FIX: demoted to 9px, dimmer color, and grouped under a "// BUILD" label so it doesn't compete with EMAIL/REACH -->
     <g transform="translate(56, 700)" font-family="'JetBrains Mono',monospace" font-size="9" fill="#3a4458" letter-spacing="1">
@@ -203,90 +152,158 @@
     <text x="332" y="134" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" letter-spacing="2">// CAPABILITY MATRIX</text>
     <text x="868" y="134" font-family="'JetBrains Mono',monospace" font-size="9" fill="#19c7d9" text-anchor="end" letter-spacing="1">0x02</text>
 
-    <!-- ===== RADAR CHART (v8: the hero of the center panel) ===== -->
+    <!-- ===== RADAR CHART (FIX #2: rescaled to 0-100) ===== -->
     <!--
-      v8: enlarged 1.7x. Reference grid uses 5 hex levels (max=100).
-      The polygon is irregular, with 6 named axes, vertex values
-      shown in teal, and an amber dashed inner outline for warmth.
+      The radar is the SINGLE SOURCE OF TRUTH for capability values.
+      The Stack Depth bars next to it have been removed to avoid duplication.
     -->
-    <g transform="translate(600, 410)">
-      <!-- Reference grid: outer hexagon at max=100 (radius 200) -->
+    <g transform="translate(470, 360)">
+      <!-- Reference grid: 5 concentric hexagons, max=100 (FIX #2) -->
       <g fill="none" stroke="#1c2a44" stroke-width="0.5">
-        <polygon points="0,-200 173,-100 173,100 0,200 -173,100 -173,-100"/>
+        <polygon points="0,-120 104,-60 104,60 0,120 -104,60 -104,-60"/>
       </g>
       <g fill="none" stroke="#1c2a44" stroke-width="0.5" stroke-dasharray="2,3">
-        <polygon points="0,-150 130,-75 130,75 0,150 -130,75 -130,-75"/>
-        <polygon points="0,-100 87,-50 87,50 0,100 -87,50 -87,-50"/>
-        <polygon points="0,-50 43,-25 43,25 0,50 -43,25 -43,-25"/>
+        <polygon points="0,-90 78,-45 78,45 0,90 -78,45 -78,-45"/>
+        <polygon points="0,-60 52,-30 52,30 0,60 -52,30 -52,-30"/>
+        <polygon points="0,-30 26,-15 26,15 0,30 -26,15 -26,-15"/>
       </g>
       <!-- axis spokes -->
       <g stroke="#1c2a44" stroke-width="0.5">
-        <line x1="0" y1="0" x2="0" y2="-200"/>
-        <line x1="0" y1="0" x2="173" y2="-100"/>
-        <line x1="0" y1="0" x2="173" y2="100"/>
-        <line x1="0" y1="0" x2="0" y2="200"/>
-        <line x1="0" y1="0" x2="-173" y2="100"/>
-        <line x1="0" y1="0" x2="-173" y2="-100"/>
+        <line x1="0" y1="0" x2="0" y2="-120"/>
+        <line x1="0" y1="0" x2="104" y2="-60"/>
+        <line x1="0" y1="0" x2="104" y2="60"/>
+        <line x1="0" y1="0" x2="0" y2="120"/>
+        <line x1="0" y1="0" x2="-104" y2="60"/>
+        <line x1="0" y1="0" x2="-104" y2="-60"/>
       </g>
       <!--
         Capability values (rescaled so the polygon is irregular):
         AI/ML=92, SEC=87, ENG=68, XAI=95, DATA=72, SHIP=80
-        radius = value/100 * 200
+        radius = value/100 * 120
       -->
-      <!-- filled polygon (v8: subtle breathing animation) -->
-      <polygon points="0,-184 152,-83 117,67 0,190 -103,60 -139,-80"
+      <!-- filled polygon (FIX #7: subtle breathing animation) -->
+      <polygon points="0,-110 87,-50 70,40 0,114 -62,36 -83,-48"
                fill="#19c7d9" fill-opacity="0.18"
-               stroke="#19c7d9" stroke-width="2.5">
+               stroke="#19c7d9" stroke-width="2">
         <animate attributeName="fill-opacity" values="0.18;0.32;0.18" dur="4s" repeatCount="indefinite"/>
       </polygon>
       <!-- subtle inner amber outline for warmth -->
-      <polygon points="0,-184 152,-83 117,67 0,190 -103,60 -139,-80"
+      <polygon points="0,-110 87,-50 70,40 0,114 -62,36 -83,-48"
                fill="none" stroke="#f29e2e" stroke-width="0.5" stroke-dasharray="3,3"/>
-      <!-- axis labels (large, bold) -->
-      <g font-size="13" font-weight="700" fill="#c9d1d9" text-anchor="middle" letter-spacing="2">
-        <text x="0" y="-220">AI/ML</text>
-        <text x="195" y="-108">SEC</text>
-        <text x="195" y="118">ENG</text>
-        <text x="0" y="232">XAI</text>
-        <text x="-195" y="118">DATA</text>
-        <text x="-195" y="-108">SHIP</text>
+      <!-- axis labels (no values - shape only) -->
+      <g font-size="11" font-weight="700" fill="#c9d1d9" text-anchor="middle" letter-spacing="2">
+        <text x="0" y="-138">AI/ML</text>
+        <text x="120" y="-68">SEC</text>
+        <text x="120" y="82">ENG</text>
+        <text x="0" y="146">XAI</text>
+        <text x="-120" y="82">DATA</text>
+        <text x="-120" y="-68">SHIP</text>
       </g>
       <!-- values next to each axis label -->
-      <g font-size="11" font-weight="700" fill="#19c7d9" text-anchor="middle">
-        <text x="0" y="-205">92</text>
-        <text x="195" y="-93">87</text>
-        <text x="195" y="133" fill="#f29e2e">68</text>
-        <text x="0" y="247">95</text>
-        <text x="-195" y="133">72</text>
-        <text x="-195" y="-93">80</text>
+      <g font-size="9" font-weight="700" fill="#19c7d9" text-anchor="middle">
+        <text x="0" y="-126">92</text>
+        <text x="120" y="-56">87</text>
+        <text x="120" y="94" fill="#f29e2e">68</text>
+        <text x="0" y="158">95</text>
+        <text x="-120" y="94">72</text>
+        <text x="-120" y="-56">80</text>
       </g>
-      <!-- vertex dots (bigger for the larger chart) -->
-      <g fill="#f29e2e" stroke="#0a0e1a" stroke-width="2">
-        <circle cx="0" cy="-184" r="5"/>
-        <circle cx="152" cy="-83" r="5"/>
-        <circle cx="117" cy="67" r="5"/>
-        <circle cx="0" cy="190" r="5"/>
-        <circle cx="-103" cy="60" r="5"/>
-        <circle cx="-139" cy="-80" r="5"/>
+      <!-- vertex dots -->
+      <g fill="#f29e2e">
+        <circle cx="0" cy="-110" r="3.5"/>
+        <circle cx="87" cy="-50" r="3.5"/>
+        <circle cx="70" cy="40" r="3.5"/>
+        <circle cx="0" cy="114" r="3.5"/>
+        <circle cx="-62" cy="36" r="3.5"/>
+        <circle cx="-83" cy="-48" r="3.5"/>
       </g>
       <!-- center crosshair -->
-      <line x1="-6" y1="0" x2="6" y2="0" stroke="#19c7d9" stroke-width="0.5"/>
-      <line x1="0" y1="-6" x2="0" y2="6" stroke="#19c7d9" stroke-width="0.5"/>
+      <line x1="-4" y1="0" x2="4" y2="0" stroke="#19c7d9" stroke-width="0.5"/>
+      <line x1="0" y1="-4" x2="0" y2="4" stroke="#19c7d9" stroke-width="0.5"/>
     </g>
 
-    <!-- ===== TRUSTEVAL-AI COMPACT BADGE (v8: moved to top of center panel, above the radar) ===== -->
-    <g transform="translate(600, 130)">
-      <!-- a small "currently shipping" tag, centered above the radar -->
-      <rect x="-120" y="0" width="240" height="32" fill="#0d1a2b" stroke="#1c2a44" stroke-width="0.5" rx="4"/>
-      <rect x="-120" y="0" width="3" height="32" fill="#19c7d9"/>
-      <text x="-104" y="20" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" letter-spacing="2">// SHIPPING</text>
-      <text x="-104" y="32" font-family="'Inter',sans-serif" font-size="12" font-weight="600" fill="#19c7d9">TrustEvaluatorAI</text>
-      <text x="116" y="20" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" text-anchor="end" letter-spacing="1">5 agents</text>
-      <text x="116" y="32" font-family="'JetBrains Mono',monospace" font-size="9" fill="#4ade80" text-anchor="end" font-weight="700">7/7 ✓</text>
+    <!-- ===== NOW BUILDING block (right of radar) ===== -->
+    <g transform="translate(640, 170)">
+      <text x="0" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" letter-spacing="2">// NOW BUILDING</text>
+      <text x="0" y="26" font-family="'Inter',sans-serif" font-size="22" font-weight="600" fill="#19c7d9">TrustEvaluatorAI</text>
+      <text x="0" y="46" font-family="'Inter',sans-serif" font-size="11" fill="#8a96ac">multi-agent Trust &amp; Safety copilot</text>
+      <line x1="0" y1="58" x2="200" y2="58" stroke="#1c2a44" stroke-width="0.5"/>
+      <text x="0" y="76" font-family="'JetBrains Mono',monospace" font-size="10" fill="#5a6678">5 agents · LangGraph · Fly.io</text>
+      <!-- small icon: clipboard with check -->
+      <g transform="translate(0, 96)">
+        <rect x="0" y="0" width="32" height="40" fill="#0a1018" stroke="#1c2a44" stroke-width="0.5"/>
+        <rect x="9" y="-3" width="14" height="5" fill="#1c2a44"/>
+        <line x1="6" y1="12" x2="26" y2="12" stroke="#1c2a44" stroke-width="0.5"/>
+        <line x1="6" y1="20" x2="26" y2="20" stroke="#1c2a44" stroke-width="0.5"/>
+        <line x1="6" y1="28" x2="20" y2="28" stroke="#1c2a44" stroke-width="0.5"/>
+        <path d="M 22 32 L 26 36 L 32 28" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="square"/>
+      </g>
+      <text x="40" y="112" font-family="'Inter',sans-serif" font-size="11" fill="#c9d1d9">5/5 agents</text>
+      <text x="40" y="126" font-family="'Inter',sans-serif" font-size="10" fill="#8a96ac">7/7 eval</text>
+      <text x="40" y="140" font-family="'Inter',sans-serif" font-size="10" fill="#4ade80" font-weight="600">all pass</text>
     </g>
 
-    <!-- ===== STACK DEPTH (v8: REMOVED from center; moved to left rail below the bio) ===== -->
-    <!-- v8: stack bars moved to the left rail as a compact vertical list -->
+    <!-- ===== STACK DEPTH (right of radar, below) ===== -->
+    <!--
+      Note: Stack Depth shows SPECIFIC TOOLS (Python, PyTorch, etc.) — this
+      is a different concept from the radar's CAPABILITIES (AI/ML, SEC, etc.).
+      Tools and capabilities are not duplicates; the radar shows where you
+      can contribute, the bars show what you reach for day-to-day.
+      FIX: added a max-axis (100) line and % suffix so the bars have scale.
+    -->
+    <g transform="translate(640, 380)">
+      <text x="0" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" letter-spacing="2">// STACK · DAILY TOOLS</text>
+      <!-- FIX v2: scale the bars to 90% max so shorter bars (C++, AWS) don't look truncated. 100% tick is shown but the bar track maxes at 90 visually. -->
+      <line x1="100" y1="6" x2="226" y2="138" stroke="#1c2a44" stroke-width="0.5" stroke-dasharray="2,2"/>
+      <line x1="226" y1="6" x2="226" y2="138" stroke="#1c2a44" stroke-width="0.5"/>
+      <text x="230" y="14" font-family="'JetBrains Mono',monospace" font-size="7" fill="#3a4458">90%</text>
+      <text x="230" y="138" font-family="'JetBrains Mono',monospace" font-size="7" fill="#3a4458">0%</text>
+      <!-- bars: dot+name left, thin progress bar right, value rightmost -->
+      <g font-family="'Inter',sans-serif" font-size="11">
+        <g transform="translate(0, 20)">
+          <text fill="#c9d1d9">Python</text>
+          <rect x="100" y="-9" width="140" height="3" fill="#1c2a44"/>
+          <rect x="100" y="-9" width="121" height="3" fill="#19c7d9"/>
+          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#19c7d9" text-anchor="end">96</text>
+        </g>
+        <g transform="translate(0, 38)">
+          <text fill="#c9d1d9">PyTorch</text>
+          <rect x="100" y="-9" width="140" height="3" fill="#1c2a44"/>
+          <rect x="100" y="-9" width="103" height="3" fill="#19c7d9"/>
+          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#19c7d9" text-anchor="end">82</text>
+        </g>
+        <g transform="translate(0, 56)">
+          <text fill="#c9d1d9">LangGraph</text>
+          <rect x="100" y="-9" width="140" height="3" fill="#1c2a44"/>
+          <rect x="100" y="-9" width="95" height="3" fill="#19c7d9"/>
+          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#19c7d9" text-anchor="end">76</text>
+        </g>
+        <g transform="translate(0, 74)">
+          <text fill="#c9d1d9">FastAPI</text>
+          <rect x="100" y="-9" width="140" height="3" fill="#1c2a44"/>
+          <rect x="100" y="-9" width="91" height="3" fill="#19c7d9"/>
+          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#19c7d9" text-anchor="end">73</text>
+        </g>
+        <g transform="translate(0, 92)">
+          <text fill="#c9d1d9">Docker</text>
+          <rect x="100" y="-9" width="140" height="3" fill="#1c2a44"/>
+          <rect x="100" y="-9" width="85" height="3" fill="#19c7d9"/>
+          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#19c7d9" text-anchor="end">68</text>
+        </g>
+        <g transform="translate(0, 110)">
+          <text fill="#f29e2e">AWS</text>
+          <rect x="100" y="-9" width="140" height="3" fill="#1c2a44"/>
+          <rect x="100" y="-9" width="68" height="3" fill="#f29e2e"/>
+          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#f29e2e" text-anchor="end">54</text>
+        </g>
+        <g transform="translate(0, 128)">
+          <text fill="#f29e2e">C++</text>
+          <rect x="100" y="-9" width="140" height="3" fill="#1c2a44"/>
+          <rect x="100" y="-9" width="45" height="3" fill="#f29e2e"/>
+          <text x="248" y="0" font-family="'JetBrains Mono',monospace" font-size="9" fill="#f29e2e" text-anchor="end">36</text>
+        </g>
+      </g>
+    </g>
 
     <!-- ===== THESIS METRICS — bottom of center panel ===== -->
     <!-- FIX v2: instead of a connector line (which was invisible), the thesis row is now grouped under a single header that names BOTH the radar (top) and metrics (below) -->
@@ -563,49 +580,46 @@
     </g>
   </g>
 
-  <!-- ============================== TIMELINE (v8: dedicated zone, era color zones, generous breathing room) ============================== -->
-  <!--
-    v8: 280px tall (was 120). 5 events on a linear axis from 2022 to 2026.
-    The axis has 3 era color zones underneath (teal=career, amber=ships, green=now).
-    Each event has a big readable name above the axis and a subtitle below.
-    The axis is at y=940 (axis line). Events float above at y=830-890.
-  -->
+  <!-- ============================== TIMELINE (FIX #5: linear axis, even ticks) ============================== -->
+  <!-- spans the full width below, ties everything together -->
   <g>
-    <rect x="40" y="800" width="1120" height="280" fill="#0a1018" stroke="#1c2a44" stroke-width="0.5" rx="4"/>
-    <rect x="40" y="800" width="1120" height="3" fill="#4ade80"/>
-    <rect x="40" y="800" width="1120" height="36" fill="#0d141f"/>
-    <text x="56" y="824" font-family="'JetBrains Mono',monospace" font-size="11" fill="#5a6678" letter-spacing="2">// INCIDENT TIMELINE · 2022 → NOW</text>
-    <text x="1144" y="824" font-family="'JetBrains Mono',monospace" font-size="11" fill="#4ade80" text-anchor="end" letter-spacing="1">0x04</text>
+    <rect x="40" y="760" width="1120" height="120" fill="#0a1018" stroke="#1c2a44" stroke-width="0.5" rx="4"/>
+    <rect x="40" y="760" width="1120" height="3" fill="#4ade80"/>
+    <rect x="40" y="760" width="1120" height="22" fill="#0d141f"/>
+    <text x="56" y="776" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5a6678" letter-spacing="2">// INCIDENT TIMELINE · 2022 → NOW</text>
+    <text x="1144" y="776" font-family="'JetBrains Mono',monospace" font-size="9" fill="#4ade80" text-anchor="end" letter-spacing="1">0x04</text>
 
     <!--
-      axis at y=940, x=80 to x=1120
+      linear axis at y=850, x=80 to x=1120
       5 events: 2022, 2023, 2024, 2025, 2026
       evenly spaced: 2022 at x=80, 2026 at x=1080, gap=250
     -->
-    <g transform="translate(80, 940)">
-      <!-- era zones UNDER the axis line: 3 colored bands showing the narrative arc -->
-      <g opacity="0.7">
-        <rect x="0" y="0" width="500" height="14" fill="#19c7d9" fill-opacity="0.05"/>
-        <rect x="500" y="0" width="500" height="14" fill="#f29e2e" fill-opacity="0.05"/>
-        <rect x="1000" y="0" width="80" height="14" fill="#4ade80" fill-opacity="0.08"/>
-      </g>
-      <!-- main axis line (thicker, more visible) -->
-      <line x1="0" y1="0" x2="1080" y2="0" stroke="#1c2a44" stroke-width="1.5"/>
+    <g transform="translate(80, 850)">
+      <!-- main axis line -->
+      <line x1="0" y1="0" x2="1000" y2="0" stroke="#1c2a44" stroke-width="1"/>
       <!-- year tick marks: 0, 250, 500, 750, 1000 (correspond to 2022..2026) -->
-      <g stroke="#1c2a44" stroke-width="1.5">
-        <line x1="0"   y1="-6" x2="0"   y2="6"/>
-        <line x1="250" y1="-6" x2="250" y2="6"/>
-        <line x1="500" y1="-6" x2="500" y2="6"/>
-        <line x1="750" y1="-6" x2="750" y2="6"/>
-        <line x1="1000" y1="-6" x2="1000" y2="6"/>
+      <g stroke="#1c2a44" stroke-width="1">
+        <line x1="0"   y1="-5" x2="0"   y2="5"/>
+        <line x1="250" y1="-5" x2="250" y2="5"/>
+        <line x1="500" y1="-5" x2="500" y2="5"/>
+        <line x1="750" y1="-5" x2="750" y2="5"/>
+        <line x1="1000" y1="-5" x2="1000" y2="5"/>
       </g>
-      <!-- year labels (larger, more presence) -->
-      <g font-family="'JetBrains Mono',monospace" font-size="13" fill="#c9d1d9" text-anchor="middle" letter-spacing="3" font-weight="700">
-        <text x="0" y="36">2022</text>
-        <text x="250" y="36">2023</text>
-        <text x="500" y="36">2024</text>
-        <text x="750" y="36">2025</text>
-        <text x="1000" y="36">2026</text>
+      <!-- year labels under the axis -->
+      <g font-family="'JetBrains Mono',monospace" font-size="10" fill="#5a6678" text-anchor="middle" letter-spacing="2">
+        <text x="0" y="22">2022</text>
+        <text x="250" y="22">2023</text>
+        <text x="500" y="22">2024</text>
+        <text x="750" y="22">2025</text>
+        <text x="1000" y="22">2026</text>
+      </g>
+      <!-- FIX: small year dots above every year, so the axis reads as a continuous timeline not a sparse one -->
+      <g fill="#3a4458">
+        <circle cx="0" cy="0" r="1.5"/>
+        <circle cx="250" cy="0" r="1.5"/>
+        <circle cx="500" cy="0" r="1.5"/>
+        <circle cx="750" cy="0" r="1.5"/>
+        <circle cx="1000" cy="0" r="1.5"/>
       </g>
       <!-- intermediate year markers (Q1/Q2/Q3 ticks) for visual rhythm -->
       <g stroke="#1c2a44" stroke-width="0.5" stroke-dasharray="1,2">
@@ -614,68 +628,54 @@
         <line x1="625" y1="-2" x2="625" y2="2"/>
         <line x1="875" y1="-2" x2="875" y2="2"/>
       </g>
-      <!-- era color labels above the years (v8: makes the narrative visible at a glance) -->
-      <g font-family="'JetBrains Mono',monospace" font-size="9" fill="#19c7d9" text-anchor="middle" letter-spacing="2" opacity="0.7">
-        <text x="125" y="-10">▸ CAREER</text>
-      </g>
-      <g font-family="'JetBrains Mono',monospace" font-size="9" fill="#f29e2e" text-anchor="middle" letter-spacing="2" opacity="0.7">
-        <text x="625" y="-10">▸ SHIPS</text>
-      </g>
-      <g font-family="'JetBrains Mono',monospace" font-size="9" fill="#4ade80" text-anchor="middle" letter-spacing="2" opacity="0.7">
-        <text x="1040" y="-10">▸ NOW</text>
-      </g>
 
-      <!-- events: v8 - GENEROUS BREATHING ROOM, large readable labels -->
+      <!-- events: each has a dot on the axis, a label above + subtitle below -->
       <!-- 1. PAN-OS (2022) -->
       <g transform="translate(0, 0)">
-        <line x1="0" y1="-2" x2="0" y2="-50" stroke="#19c7d9" stroke-width="0.5" stroke-dasharray="1,2"/>
-        <circle cx="0" cy="0" r="7" fill="#19c7d9" stroke="#0a1018" stroke-width="2"/>
-        <text x="0" y="-66" font-family="'JetBrains Mono',monospace" font-size="13" font-weight="700" fill="#19c7d9" text-anchor="middle" letter-spacing="2">PAN-OS</text>
-        <text x="0" y="-82" font-family="'Inter',sans-serif" font-size="10" fill="#c9d1d9" text-anchor="middle">U.Idaho · 900+ rules</text>
-        <text x="0" y="56" font-family="'Inter',sans-serif" font-size="9" fill="#8a96ac" text-anchor="middle">automation era</text>
+        <line x1="0" y1="-2" x2="0" y2="-22" stroke="#19c7d9" stroke-width="0.5" stroke-dasharray="1,2"/>
+        <circle cx="0" cy="0" r="5" fill="#19c7d9" stroke="#0a1018" stroke-width="1.5"/>
+        <text x="0" y="-30" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="#19c7d9" text-anchor="middle" letter-spacing="1.5">PAN-OS</text>
+        <text x="0" y="14" font-family="'Inter',sans-serif" font-size="8" fill="#8a96ac" text-anchor="middle">900+ rules</text>
       </g>
       <!-- 2. M.Sc. (2023) -->
       <g transform="translate(250, 0)">
-        <line x1="0" y1="-2" x2="0" y2="-50" stroke="#19c7d9" stroke-width="0.5" stroke-dasharray="1,2"/>
-        <circle cx="0" cy="0" r="7" fill="#19c7d9" stroke="#0a1018" stroke-width="2"/>
-        <text x="0" y="-66" font-family="'JetBrains Mono',monospace" font-size="13" font-weight="700" fill="#19c7d9" text-anchor="middle" letter-spacing="2">M.Sc. CS</text>
-        <text x="0" y="-82" font-family="'Inter',sans-serif" font-size="10" fill="#c9d1d9" text-anchor="middle">U. Idaho, XAI focus</text>
-        <text x="0" y="56" font-family="'Inter',sans-serif" font-size="9" fill="#8a96ac" text-anchor="middle">thesis begins</text>
+        <line x1="0" y1="-2" x2="0" y2="-22" stroke="#19c7d9" stroke-width="0.5" stroke-dasharray="1,2"/>
+        <circle cx="0" cy="0" r="5" fill="#19c7d9" stroke="#0a1018" stroke-width="1.5"/>
+        <text x="0" y="-30" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="#19c7d9" text-anchor="middle" letter-spacing="1.5">M.Sc. CS</text>
+        <text x="0" y="14" font-family="'Inter',sans-serif" font-size="8" fill="#8a96ac" text-anchor="middle">U. Idaho</text>
       </g>
-      <!-- 3. NetworkSage (2024) -->
-      <g transform="translate(500, 0)">
-        <line x1="0" y1="-2" x2="0" y2="-50" stroke="#f29e2e" stroke-width="0.5" stroke-dasharray="1,2"/>
-        <circle cx="0" cy="0" r="7" fill="#f29e2e" stroke="#0a1018" stroke-width="2"/>
-        <text x="0" y="-66" font-family="'JetBrains Mono',monospace" font-size="13" font-weight="700" fill="#f29e2e" text-anchor="middle" letter-spacing="2">NETWORKSAGE</text>
-        <text x="0" y="-82" font-family="'Inter',sans-serif" font-size="10" fill="#c9d1d9" text-anchor="middle">4-agent SOC, AttributionRef</text>
-        <text x="0" y="56" font-family="'Inter',sans-serif" font-size="9" fill="#8a96ac" text-anchor="middle">first ship</text>
+      <!-- 3. NetworkSage (2024, slightly later) - between 2024 and 2025 -->
+      <g transform="translate(560, 0)">
+        <line x1="0" y1="-2" x2="0" y2="-22" stroke="#f29e2e" stroke-width="0.5" stroke-dasharray="1,2"/>
+        <circle cx="0" cy="0" r="5" fill="#f29e2e" stroke="#0a1018" stroke-width="1.5"/>
+        <text x="0" y="-30" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="#f29e2e" text-anchor="middle" letter-spacing="1.5">NETWORKSAGE</text>
+        <text x="0" y="14" font-family="'Inter',sans-serif" font-size="8" fill="#8a96ac" text-anchor="middle">4-agent SOC</text>
       </g>
       <!-- 4. TrustEval-AI (2025) -->
       <g transform="translate(750, 0)">
-        <line x1="0" y1="-2" x2="0" y2="-50" stroke="#f29e2e" stroke-width="0.5" stroke-dasharray="1,2"/>
-        <circle cx="0" cy="0" r="7" fill="#f29e2e" stroke="#0a1018" stroke-width="2"/>
-        <text x="0" y="-66" font-family="'JetBrains Mono',monospace" font-size="13" font-weight="700" fill="#f29e2e" text-anchor="middle" letter-spacing="2">TRUSTEVAL-AI</text>
-        <text x="0" y="-82" font-family="'Inter',sans-serif" font-size="10" fill="#c9d1d9" text-anchor="middle">live on fly.io · 5 agents</text>
-        <text x="0" y="56" font-family="'Inter',sans-serif" font-size="9" fill="#8a96ac" text-anchor="middle">7/7 eval pass</text>
+        <line x1="0" y1="-2" x2="0" y2="-22" stroke="#f29e2e" stroke-width="0.5" stroke-dasharray="1,2"/>
+        <circle cx="0" cy="0" r="5" fill="#f29e2e" stroke="#0a1018" stroke-width="1.5"/>
+        <text x="0" y="-30" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="#f29e2e" text-anchor="middle" letter-spacing="1.5">TRUSTEVAL-AI</text>
+        <text x="0" y="14" font-family="'Inter',sans-serif" font-size="8" fill="#8a96ac" text-anchor="middle">live on fly.io</text>
       </g>
       <!-- 5. NOW (pulsing marker at 2026) -->
       <g transform="translate(1000, 0)">
-        <circle cx="0" cy="0" r="18" fill="#4ade80" fill-opacity="0.08"/>
-        <circle cx="0" cy="0" r="8" fill="#4ade80" stroke="#0a1018" stroke-width="2"/>
-        <circle cx="0" cy="0" r="12" fill="none" stroke="#4ade80" stroke-opacity="0.5" stroke-width="1">
-          <animate attributeName="r" values="8;20;8" dur="2.4s" repeatCount="indefinite"/>
+        <!-- FIX: a "glow" behind the NOW node to make it visually heavier than the others -->
+        <circle cx="0" cy="0" r="14" fill="#4ade80" fill-opacity="0.08"/>
+        <circle cx="0" cy="0" r="6" fill="#4ade80" stroke="#0a1018" stroke-width="1.5"/>
+        <circle cx="0" cy="0" r="10" fill="none" stroke="#4ade80" stroke-opacity="0.5" stroke-width="1">
+          <animate attributeName="r" values="6;16;6" dur="2.4s" repeatCount="indefinite"/>
           <animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="2.4s" repeatCount="indefinite"/>
         </circle>
-        <text x="0" y="-66" font-family="'JetBrains Mono',monospace" font-size="14" font-weight="700" fill="#4ade80" text-anchor="middle" letter-spacing="2.5">NOW</text>
-        <text x="0" y="-82" font-family="'Inter',sans-serif" font-size="10" fill="#4ade80" text-anchor="middle" font-weight="600">M.Sc. conferred · OPEN</text>
-        <text x="0" y="56" font-family="'Inter',sans-serif" font-size="9" fill="#4ade80" text-anchor="middle" font-weight="600">→ available</text>
+        <text x="0" y="-30" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="#4ade80" text-anchor="middle" letter-spacing="1.5">NOW</text>
+        <text x="0" y="14" font-family="'Inter',sans-serif" font-size="8" fill="#4ade80" text-anchor="middle">M.Sc. conferred</text>
       </g>
     </g>
   </g>
 
   <!-- ============================== FOOTER ============================== -->
   <g>
-    <line x1="40" y1="1094" x2="1160" y2="1094" stroke="#1c2a44" stroke-width="0.5"/>
+    <line x1="40" y1="894" x2="1160" y2="894" stroke="#1c2a44" stroke-width="0.5"/>
   </g>
 </svg>
 
@@ -744,4 +744,4 @@ email:       youssef.s.saleh@gmail.com
   <a href="https://launchgood-trust-copilot.fly.dev/">Live demo</a>
 </p>
 
-<sub>:construction: hand-built. the hero is a single inline SVG with motion: a 1.7x-larger capability radar with a breathing polygon, a shipping badge above it, a compact stack list in the left rail, and a dedicated 280px-tall incident timeline with era color zones (CAREER → SHIPS → NOW). five hue families, two typefaces, six motion elements.</sub>
+<sub>:construction: hand-built. the hero is a single inline SVG with motion: breathing radar pulse, sparkline self-drawing animation, status pill breathing, NOW marker that radiates outward, and a ticker cursor scan. five hue families: slate identity, cyan capability, amber event stream, green timeline, dark ink chrome. the live-data infrastructure (build_hero.py + rebuild-hero.yml) is in the repo but not yet activated — it will be when you have more commits and stars to show.</sub>
