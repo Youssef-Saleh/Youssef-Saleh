@@ -5,9 +5,6 @@ Applied AI · Network Security · Explainable AI
 
 ---
 
-> *"A model that classifies a packet as malicious isn't useful if a SOC analyst can't tell it why."*
-
----
 
 ## Featured Projects
 
@@ -42,6 +39,7 @@ Applied AI · Network Security · Explainable AI
 | [XAI_LLM_NetPacketAnalyzer](https://github.com/Youssef-Saleh/XAI_LLM_NetPacketAnalyzer) | M.Sc. thesis — see featured above |
 | [TrustEvaluatorAI](https://github.com/Youssef-Saleh/TrustEvaluatorAI) | Multi-agent Trust & Safety — see featured above |
 | [NetworkSage](https://github.com/Youssef-Saleh/NetworkSage) | Multi-agent SOC analyst — see featured above |
+| [GP-MSI](https://github.com/Youssef-Saleh/GP-MSI) | Bachelor Project MSI analysis |
 
 <details>
 <summary><strong>15 more repositories</strong></summary>
@@ -53,15 +51,10 @@ Applied AI · Network Security · Explainable AI
 | [Body-Signals-Filtering](https://github.com/Youssef-Saleh/Body-Signals-Filtering) | BMEN 3311 biomedical signal processing final |
 | [CNN-Image-Classification](https://github.com/Youssef-Saleh/CNN-Image-Classification) | CNN image classifier notebook |
 | [Emergency-Department-Patient-Flow](https://github.com/Youssef-Saleh/Emergency-Department-Patient-Flow) | ED triage throughput simulation |
-| [GP-MSI](https://github.com/Youssef-Saleh/GP-MSI) | Gaussian-Process MSI analysis |
 | [ImageSegmentation](https://github.com/Youssef-Saleh/ImageSegmentation) | Image segmentation experiments |
 | [Pacify-Android](https://github.com/Youssef-Saleh/Pacify-Android) | Native Android client for Pacify |
 | [Pacify-BackEnd](https://github.com/Youssef-Saleh/Pacify-BackEnd) | Node back-end for Pacify |
-| [Pacify-Testing](https://github.com/Youssef-Saleh/Pacify-Testing) | Cypress test automation for Pacify |
-| [ProteinMass-Visualization](https://github.com/Youssef-Saleh/ProteinMass-Visualization) | Mass-spec visualization |
-| [T1-Project](https://github.com/Youssef-Saleh/T1-Project) | JavaScript team project |
-| [Beat-Project-T1](https://github.com/Youssef-Saleh/Beat-Project-T1) | JavaScript rhythm game |
-| [Site_v0](https://github.com/Youssef-Saleh/Site_v0) | First personal site |
+| [Pacify-Testing](https://github.com/Youssef-Saleh/Pacify-Testing) |  test automation for Pacify |
 | [ivy](https://github.com/Youssef-Saleh/ivy) | Forked ML framework exploration |
 
 </details>
@@ -72,9 +65,5 @@ Applied AI · Network Security · Explainable AI
 
 📧 [youssef.s.saleh@gmail.com](mailto:youssef.s.saleh@gmail.com) &nbsp;·&nbsp;
 🔗 [LinkedIn](https://www.linkedin.com/in/youssef-saleh/) &nbsp;·&nbsp;
-🐙 [GitHub](https://github.com/Youssef-Saleh) &nbsp;·&nbsp;
-🌐 [Live Demo](https://launchgood-trust-copilot.fly.dev/)
 
 ---
-
-*Built with markdown. No images, no HTML, no external dependencies.*
